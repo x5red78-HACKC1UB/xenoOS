@@ -11,11 +11,21 @@
 </head>
 <body>
 <header>
-    <div class="clock">
-    <div id="day">Tuesday</div> <!--Header is a clock-->
+    <div id="clock">
+    <div id="day">Wednesday</div> <!--Header is a clock-->
     
     <div id="time">19:17</div>
   </div>
+  <script>
+    function updatetime() {
+        document.querySelector("#day").textContent =
+    new Date().toLocaleDateString("en-US", { weekday: "long" });
+ document.getElementById("time").innerHTML = new Date().toLocaleTimeString();
+
+    }
+    updatetime();
+    setInterval(updatetime,1000);
+  </script>
 </header>
 <main>
    
