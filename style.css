@@ -28,7 +28,6 @@ main{
 header{
     display: flex;
     position: absolute;
-   color: rgb(49, 49, 82);
      font-family: "Inter", sans-serif !important;
   font-optical-sizing: auto;
   font-weight: 50 !important;
@@ -54,6 +53,7 @@ header{
     letter-spacing: 5px;
    margin-left: 150px;
    margin-top: 50px;
+   color: rgb(49, 49, 82);
 }
 #time{
     font-family: "Inter", sans-serif !important;
@@ -64,4 +64,5 @@ header{
     letter-spacing: -2px;
     margin-left: 200px;
    margin-top: 15px;
+   color: rgb(49, 49, 82);
 }
