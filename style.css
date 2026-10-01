@@ -11,12 +11,19 @@ body{
     flex-direction: column;
 
     overflow: hidden;
+    isolation: isolate;
     background-color: rgb(66, 63, 82);
-    background-image: url('images/gojo.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    opacity: 1;
+  }
+#background {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image: url('images/gojo.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 1;
+  transition: opacity 500ms ease;
 }
 main{
     flex: 1;
