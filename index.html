@@ -10,29 +10,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header>
+  <div id="background" aria-hidden="true"></div>
+
+  <header>
     <div id="clock">
-    <div id="day">Wednesday</div> <!--Header is a clock-->
-    
-    <div id="time">19:17</div>
-  </div>
+      <div id="day">Wednesday</div>
+      <div id="time">19:17</div>
+    </div>
+  </header>
+
+  <main></main>
+  <footer></footer>
+
   <script>
     function updatetime() {
-        document.querySelector("#day").textContent =
-    new Date().toLocaleDateString("en-US", { weekday: "long" });
- document.getElementById("time").innerHTML = new Date().toLocaleTimeString();
-
+      document.querySelector("#day").textContent =
+        new Date().toLocaleDateString("en-US", { weekday: "long" });
+      document.getElementById("time").innerHTML = new Date().toLocaleTimeString();
     }
     updatetime();
-    setInterval(updatetime,1000);
+    setInterval(updatetime, 1000);
   </script>
-</header>
-<main>
-   
-</main>
-<footer>
 
-</footer>
-<script src="index.js" defer></script>  
+  <script src="index.js" defer></script>
 </body>
 </html>
