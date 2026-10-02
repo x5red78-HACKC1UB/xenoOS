@@ -120,7 +120,7 @@ async function fadein() {
 async function imgshift(){
    bg.style.background = "url('images/gojo.jpg') center/cover no-repeat";
    while(true){
-    await imgtime(6000);
+    await imgtime(60000);
   fadein();
   await imgtime(600);
   theme=1-theme;
