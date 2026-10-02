@@ -6,6 +6,26 @@ let theme = 0;
 const bgimg = [
   "url('images/gojo.jpg') center/cover no-repeat",
   "url('images/choso.jpg') center/cover no-repeat",
+  "url('images/$KASHIMO$.webp') center/cover no-repeat",
+  "url('images/120%.png') center/cover no-repeat",
+  "url('images/hakari.png') center/cover no-repeat",
+  "url('images/hakari2.png') center/cover no-repeat",
+  "url('images/higuruma.png') center/cover no-repeat",
+  "url('images/JUDAS.png') center/cover no-repeat",
+  "url('images/mahito.png') center/cover no-repeat",
+  "url('images/megumi.png') center/cover no-repeat",
+  "url('images/meguna.png') center/cover no-repeat",
+  "url('images/nanamin.png') center/cover no-repeat",
+  "url('images/naoya.png') center/cover no-repeat",
+  "url('images/ryu.png') center/cover no-repeat",
+  "url('images/sendai.png') center/cover no-repeat",
+  "url('images/TAKABA.png') center/cover no-repeat",
+  "url('images/todo.png') center/cover no-repeat",
+  "url('images/toji.png') center/cover no-repeat",
+  "url('images/yuki.png') center/cover no-repeat",
+];
+const bgnames=[
+"gojo", "choso", "kashimo", "120", "hakari", "hakari2", "higuruma", "JUDAS", "mahito","megumi", "meguna", "nanamin", "naoya", "ryu", "sendai", "takaba", "todo", "toji", "yuki"
 ];
  bg.style.background=bgimg[theme];
  day.style.marginLeft="150px"
@@ -30,6 +50,143 @@ time.style.color="rgb(49, 49, 82)"
     document.getElementById("time").style.marginLeft="1070px";
     day.style.color= "rgb(35, 5, 5)"
 time.style.color="rgb(35, 5, 5)"
+    break;
+     case "kashimo":
+      theme =2;
+  bg.style.background=bgimg[theme];
+  document.getElementById("day").style.marginLeft="570px";
+    document.getElementById("time").style.marginLeft="565px";
+    day.style.color= "rgb(42, 66, 80)"
+time.style.color="rgb(42, 66, 80)"
+    break;
+     case "120":
+      theme =3;
+  bg.style.background=bgimg[theme];
+  document.getElementById("day").style.marginLeft="570px";
+    document.getElementById("time").style.marginLeft="565px";
+    day.style.color= "rgb(3, 3, 3)"
+time.style.color="rgb(3, 3, 5)"
+    break;
+     case "hakari":
+      theme =4;
+  bg.style.background=bgimg[theme];
+  document.getElementById("day").style.marginLeft="150px";
+    document.getElementById("time").style.marginLeft="130px";
+    day.style.color= "rgb(231, 192, 144)"
+time.style.color="rgb(231, 192, 144)"
+    break;
+     case "hakari2":
+      theme =5;
+  bg.style.background=bgimg[theme];
+  document.getElementById("day").style.marginLeft="150px";
+    document.getElementById("time").style.marginLeft="130px";
+    day.style.color= "rgb(35, 5, 5)"
+time.style.color="rgb(35, 5, 5)"
+    break;
+     case "higuruma":
+      theme =6;
+  bg.style.background=bgimg[theme];
+  document.getElementById("day").style.marginLeft="570px";
+    document.getElementById("time").style.marginLeft="565px";
+    day.style.color= "rgb(252, 250, 250)"
+time.style.color="rgb(247, 247, 247)"
+    break;
+     case "JUDAS":
+      theme =7;
+  bg.style.background=bgimg[theme];
+  document.getElementById("day").style.marginLeft="570px";
+    document.getElementById("time").style.marginLeft="565px";
+    day.style.color= "rgb(23, 5, 35)"
+time.style.color="rgb(23, 5, 35)"
+    break;
+    case "mahito":
+      theme =8;
+  bg.style.background=bgimg[theme];
+  document.getElementById("day").style.marginLeft="570px";
+    document.getElementById("time").style.marginLeft="565px";
+    day.style.color= "rgb(240, 165, 255)"
+time.style.color="rgb(240, 165, 2555)"
+    break;
+  
+    case "megumi":
+      theme =9;
+  bg.style.background=bgimg[theme];
+  document.getElementById("day").style.marginLeft="150px";
+    document.getElementById("time").style.marginLeft="130px";
+    day.style.color= "rgb(6, 5, 35)"
+time.style.color="rgb(6, 5, 35)"
+    break;
+    case "meguna":
+      theme =10;
+  bg.style.background=bgimg[theme];
+  document.getElementById("day").style.marginLeft="570px";
+    document.getElementById("time").style.marginLeft="565px";
+    day.style.color= "rgb(76, 6, 10)"
+time.style.color="rgb(76, 6, 10)"
+    break;
+    case "nanamin":
+      theme =11;
+  bg.style.background=bgimg[theme];
+  document.getElementById("day").style.marginLeft="1080px";
+    document.getElementById("time").style.marginLeft="1070px";
+    day.style.color= "rgb(38, 138, 165)"
+time.style.color="rgb(38, 138, 165)"
+    break;
+    case "naoya":
+      theme =12;
+  bg.style.background=bgimg[theme];
+  document.getElementById("day").style.marginLeft="570px";
+    document.getElementById("time").style.marginLeft="565px";
+    day.style.color= "rgb(255, 255, 255)"
+time.style.color="rgb(251, 251, 251)"
+    break;
+    case "ryu":
+      theme =13;
+  bg.style.background=bgimg[theme];
+  document.getElementById("day").style.marginLeft="570px";
+    document.getElementById("time").style.marginLeft="565px";
+    day.style.color= "rgb(153, 228, 252)"
+time.style.color="rgb(154, 228, 252)"
+    break;
+    case "sendai":
+      theme =14;
+  bg.style.background=bgimg[theme];
+  document.getElementById("day").style.marginLeft="570px";
+    document.getElementById("time").style.marginLeft="565px";
+    day.style.color= "rgb(76, 143, 112)"
+time.style.color="rgb(76, 143, 212)"
+    break;
+    case "takaba":
+      theme =15;
+  bg.style.background=bgimg[theme];
+  document.getElementById("day").style.marginLeft="570px";
+    document.getElementById("time").style.marginLeft="565px";
+    day.style.color= "rgb(255, 230, 0)"
+time.style.color="rgb(255, 230, 0)"
+    break;
+    case "todo":
+      theme =16;
+  bg.style.background=bgimg[theme];
+  document.getElementById("day").style.marginLeft="570px";
+    document.getElementById("time").style.marginLeft="565px";
+    day.style.color= "rgb(253, 253, 253)"
+time.style.color="rgb(247, 247, 247)"
+    break;
+    case "toji":
+      theme =17;
+  bg.style.background=bgimg[theme];
+  document.getElementById("day").style.marginLeft="570px";
+    document.getElementById("time").style.marginLeft="565px";
+    day.style.color= "rgb(0, 0, 0)"
+time.style.color="rgb(0, 0, 0)"
+    break;
+    case "yuki":
+      theme =18;
+  bg.style.background=bgimg[theme];
+  document.getElementById("day").style.marginLeft="570px";
+    document.getElementById("time").style.marginLeft="565px";
+    day.style.color= "rgb(249, 7, 205)"
+time.style.color="rgb(249, 7, 205)"
     break;
   }
 }
@@ -120,11 +277,11 @@ async function fadein() {
 async function imgshift(){
    bg.style.background = "url('images/gojo.jpg') center/cover no-repeat";
    while(true){
-    await imgtime(60000);
+    await imgtime(6000);
   fadein();
   await imgtime(600);
-  theme=1-theme;
-     themeswitch(theme === 0 ? "gojo" : "choso");
+  theme = (theme + 1) % bgimg.length;
+     themeswitch(bgnames[theme]);
 }
     }
 imgshift();
