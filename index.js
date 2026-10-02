@@ -2,6 +2,7 @@ const imgtime=(ms)=> new Promise((resolve) => setTimeout(resolve,ms));
 const day=document.getElementById("day");
 const time=document.getElementById("time");
 const bg=document.getElementById("background");
+let theme = 0;
 const bgimg = [
   "url('images/gojo.jpg') center/cover no-repeat",
   "url('images/choso.jpg') center/cover no-repeat",
@@ -9,19 +10,21 @@ const bgimg = [
 function themeswitch(name) {
   switch (name) {
     case "gojo":
-      bg.style.background=bgimg[1];
- day.style.marginLeft="1050px";
-    time.style.marginLeft="1100px";
-day.style.color="rgb(49, 49, 82);"
-time.style.color="rgb(49, 49, 82);"
+      theme=0;
+      bg.style.background=bgimg[theme];
+ day.style.marginLeft="150px"
+    time.style.marginLeft="130px";
+day.style.color="rgb(49, 49, 82)"
+time.style.color="rgb(49, 49, 82)"
       break;
   
     case "choso":
-  bg.style.background=bgimg[0];
-  document.getElementById("day").style.marginLeft="150px";
-    document.getElementById("time").style.marginLeft="200px";
+      theme =1;
+  bg.style.background=bgimg[theme];
+  document.getElementById("day").style.marginLeft="1080px";
+    document.getElementById("time").style.marginLeft="1070px";
     day.style.color= "rgb(35, 5, 5)"
-time.style.color="rgb(35, 5, 5);"
+time.style.color="rgb(35, 5, 5)"
     break;
   }
 }
@@ -109,18 +112,14 @@ async function fadein() {
     bg.style.opacity=1;
 }
 
-async function imgshift(){;
+async function imgshift(){
    bg.style.background = "url('images/gojo.jpg') center/cover no-repeat";
    while(true){
     await imgtime(60000);
   fadein();
   await imgtime(600);
-  if (bg.style.background === "url('images/gojo.jpg') center/cover no-repeat") {
-    themeswitch("gojo");
-  }else{
-    themeswitch("choso");
-  }
+  theme=1-theme;
+     themeswitch(theme === 0 ? "gojo" : "choso");
 }
     }
 imgshift();
-requestAnimationFrame(imgshift);
