@@ -7,6 +7,11 @@ const bgimg = [
   "url('images/gojo.jpg') center/cover no-repeat",
   "url('images/choso.jpg') center/cover no-repeat",
 ];
+ bg.style.background=bgimg[theme];
+ day.style.marginLeft="150px"
+    time.style.marginLeft="130px";
+day.style.color="rgb(49, 49, 82)"
+time.style.color="rgb(49, 49, 82)"
 function themeswitch(name) {
   switch (name) {
     case "gojo":
@@ -115,7 +120,7 @@ async function fadein() {
 async function imgshift(){
    bg.style.background = "url('images/gojo.jpg') center/cover no-repeat";
    while(true){
-    await imgtime(60000);
+    await imgtime(6000);
   fadein();
   await imgtime(600);
   theme=1-theme;
