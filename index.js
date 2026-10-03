@@ -2,6 +2,7 @@ const imgtime=(ms)=> new Promise((resolve) => setTimeout(resolve,ms));
 const day=document.getElementById("day");
 const time=document.getElementById("time");
 const bg=document.getElementById("background");
+const welcome=document.getElementById("welcomewindow");
 let theme = 0;
 const bgimg = [
   "url('images/gojo.jpg') center/cover no-repeat",
@@ -277,7 +278,7 @@ async function fadein() {
 async function imgshift(){
    bg.style.background = "url('images/gojo.jpg') center/cover no-repeat";
    while(true){
-    await imgtime(6000);
+    await imgtime(60000);
   fadein();
   await imgtime(600);
   theme = (theme + 1) % bgimg.length;
