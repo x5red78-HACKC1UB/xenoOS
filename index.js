@@ -7,7 +7,7 @@ const bgimg = [
   "url('images/gojo.jpg') center/cover no-repeat",
   "url('images/choso.jpg') center/cover no-repeat",
   "url('images/$KASHIMO$.webp') center/cover no-repeat",
-  "url('images/120%.png') center/cover no-repeat",
+  "url('images/120.jpeg') center/cover no-repeat",
   "url('images/hakari.png') center/cover no-repeat",
   "url('images/hakari2.png') center/cover no-repeat",
   "url('images/higuruma.png') center/cover no-repeat",
@@ -64,24 +64,24 @@ time.style.color="rgb(42, 66, 80)"
   bg.style.background=bgimg[theme];
   document.getElementById("day").style.marginLeft="570px";
     document.getElementById("time").style.marginLeft="565px";
-    day.style.color= "rgb(3, 3, 3)"
-time.style.color="rgb(3, 3, 5)"
+    day.style.color= "rgb(232, 132, 73)"
+time.style.color="rgb(232, 132, 73)"
     break;
      case "hakari":
       theme =4;
   bg.style.background=bgimg[theme];
   document.getElementById("day").style.marginLeft="150px";
     document.getElementById("time").style.marginLeft="130px";
-    day.style.color= "rgb(231, 192, 144)"
-time.style.color="rgb(231, 192, 144)"
+    day.style.color= "rgb(231, 166, 104)"
+time.style.color="rgb(231, 166, 104)"
     break;
      case "hakari2":
       theme =5;
   bg.style.background=bgimg[theme];
   document.getElementById("day").style.marginLeft="150px";
     document.getElementById("time").style.marginLeft="130px";
-    day.style.color= "rgb(35, 5, 5)"
-time.style.color="rgb(35, 5, 5)"
+    day.style.color= "rgb(176, 238, 176)"
+time.style.color="rgb(176, 238, 176)"
     break;
      case "higuruma":
       theme =6;
@@ -129,8 +129,8 @@ time.style.color="rgb(76, 6, 10)"
   bg.style.background=bgimg[theme];
   document.getElementById("day").style.marginLeft="1080px";
     document.getElementById("time").style.marginLeft="1070px";
-    day.style.color= "rgb(38, 138, 165)"
-time.style.color="rgb(38, 138, 165)"
+    day.style.color= "rgb(20, 77, 93)"
+time.style.color="rgb(20, 77, 93)"
     break;
     case "naoya":
       theme =12;
@@ -175,8 +175,8 @@ time.style.color="rgb(247, 247, 247)"
     case "toji":
       theme =17;
   bg.style.background=bgimg[theme];
-  document.getElementById("day").style.marginLeft="570px";
-    document.getElementById("time").style.marginLeft="565px";
+  document.getElementById("day").style.marginLeft="150px";
+    document.getElementById("time").style.marginLeft="130px";
     day.style.color= "rgb(0, 0, 0)"
 time.style.color="rgb(0, 0, 0)"
     break;
