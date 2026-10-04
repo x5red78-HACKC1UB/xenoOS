@@ -4,6 +4,9 @@ const time=document.getElementById("time");
 const bg=document.getElementById("background");
 const welcome=document.getElementById("welcomewindow");
 const xbutton=document.getElementById("closebutton");
+const fpscalc=document.getElementById("fps");
+let fpstime = performance.now();
+let frames = 0;
 let theme = 0;
 const bgimg = [
   "url('images/gojo.jpg') center/cover no-repeat",
@@ -337,3 +340,16 @@ function StopDragging() {
   document.onmousemove = null;
 }
 }
+function Updatefps(){
+frames++;
+const now=performance.now();
+const elapsedtime=now-fpstime;
+if (elapsedtime>=1000) {
+  const framespersecond =Math.round((frames*1000)/elapsedtime);
+  fpscalc.textContent=framespersecond;
+  frames=0;
+  fpstime=now;
+};
+requestAnimationFrame(Updatefps);
+}
+Updatefps();
