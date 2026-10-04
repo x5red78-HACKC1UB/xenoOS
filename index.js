@@ -1,17 +1,20 @@
 const imgtime=(ms)=> new Promise((resolve) => setTimeout(resolve,ms));
+
 const day=document.getElementById("day");
 const time=document.getElementById("time");
 const bg=document.getElementById("background");
-const welcome=document.getElementById("welcomewindow");
+const welcome=document.getElementById("welcomewindow"); // id's
 const xbutton=document.getElementById("closebutton");
 const fpscalc=document.getElementById("fps");
+
 let fpstime = performance.now();
-let frames = 0;
+let frames = 0; //fps variable
 let theme = 0;
+
 const bgimg = [
   "url('images/gojo.jpg') center/cover no-repeat",
   "url('images/choso.jpg') center/cover no-repeat",
-  "url('images/$KASHIMO$.webp') center/cover no-repeat",
+  "url('images/$KASHIMO$.webp') center/cover no-repeat", //background img url
   "url('images/120.jpeg') center/cover no-repeat",
   "url('images/hakari.png') center/cover no-repeat",
   "url('images/hakari2.png') center/cover no-repeat",
@@ -29,7 +32,7 @@ const bgimg = [
   "url('images/toji.png') center/cover no-repeat",
   "url('images/yuki.png') center/cover no-repeat",
 ];
-const bgnames=[
+const bgnames=[ //Names of img in the code
 "gojo", "choso", "kashimo", "120", "hakari", "hakari2", "higuruma", "JUDAS", "mahito","megumi", "meguna", "nanamin", "naoya", "ryu", "sendai", "takaba", "todo", "toji", "yuki"
 ];
 
