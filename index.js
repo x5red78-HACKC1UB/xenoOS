@@ -3,6 +3,7 @@ const day=document.getElementById("day");
 const time=document.getElementById("time");
 const bg=document.getElementById("background");
 const welcome=document.getElementById("welcomewindow");
+const xbutton=document.getElementById("closebutton");
 let theme = 0;
 const bgimg = [
   "url('images/gojo.jpg') center/cover no-repeat",
@@ -28,6 +29,18 @@ const bgimg = [
 const bgnames=[
 "gojo", "choso", "kashimo", "120", "hakari", "hakari2", "higuruma", "JUDAS", "mahito","megumi", "meguna", "nanamin", "naoya", "ryu", "sendai", "takaba", "todo", "toji", "yuki"
 ];
+
+function closewindow(element) {
+  element.style.display ="none"
+}
+function openwindow(element) {
+  element.style.display ="flax"
+}
+
+xbutton.addEventListener("click",()=>{
+closewindow(welcome);
+});
+
  bg.style.background=bgimg[theme];
  day.style.marginLeft="150px"
     time.style.marginLeft="130px";
@@ -286,3 +299,41 @@ async function imgshift(){
 }
     }
 imgshift();
+DragElement(welcome); // Allow the welcome const to be draggable
+function DragElement(element){ //dragging fuction
+var initialX =0; // x value of where the window orginally was
+var initialY=0; //y value of orginal position
+var currentX=0;// x value of current position
+var currentY=0;//y value of current position
+
+if (document.getElementById(element.id+"header")) { // if theres a header element allow it to drag
+  // also no header makes the whole window draggable
+  document.getElementById(element.id+"header").onmousedown=StartDragging;
+} else{
+element.onmousedown = StartDragging; // when you hold down on the mouse start dragging
+}
+
+function StartDragging(e) {
+  e.preventDefault();
+
+  initialX=e.clientX;
+  initialY =e.clientY;
+
+  document.onmouseup =StopDragging;// when mouse is released stop dragging
+  document.onmousemove = DragElement;// allow the window to move with the mouse
+}
+function DragElement(e) {
+  e.preventDefault();
+ currentX = initialX - e.clientX;
+    currentY = initialY - e.clientY;
+    initialX = e.clientX;
+    initialY = e.clientY;
+
+        element.style.top = (element.offsetTop - currentY) + "px";
+    element.style.left = (element.offsetLeft - currentX) + "px";
+}
+function StopDragging() {
+  document.onmouseup = null;
+  document.onmousemove = null;
+}
+}
