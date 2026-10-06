@@ -15,6 +15,10 @@ const savebtn=document.getElementById("savebtn");
 const notescontainer=document.getElementById("notesContainer");
 const storednotes=localStorage.getItem("savednotes");
 
+const staticon=document.getElementById("staticon");
+const statwindow= document.getElementById("statwindow"); //stats id's
+const closestats=document.getElementById("closestats")
+
 const fpscalc=document.getElementById("fps");
 
 let fpstime = performance.now();
@@ -67,7 +71,7 @@ function openwindow(element) {
 };
 function SelectApp(app) {
   app.classList.add("selected");
-  app.style.backgroundColor="rgba(109, 160, 174, 0.28)";
+  app.style.backgroundColor="rgba(109, 160, 174, 0.28)"; // APP FUNCTIONS
   selectedapp=app;
 }
 function DeselectApp(app) {
@@ -90,10 +94,18 @@ xnotes.addEventListener("click",()=>{
 closewindow(notes);
 notetext ='';
 });
+closestats.addEventListener("click",()=>{
+closewindow(statwindow);
+});
 notesicon.addEventListener("click",()=>{
   isappselected(notesicon)
 openwindow(notes);
 });
+staticon.addEventListener("click",()=>{
+isappselected(staticon);
+openwindow(statwindow);
+});
+
 
  bg.style.background=bgimg[theme];
  day.style.marginLeft="150px"

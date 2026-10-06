@@ -15,22 +15,31 @@
 
 <div id="apps" style="padding-top: 64px; padding-left: 16px;">
 
-<div style="text-align: center; box-shadow: 0 0 8px black; width: fit-content; height: 50px; background-color: none;">
+<div style="text-align: center; width: fit-content; height: 50px; background-color: none;">
 <img src="osimg/notes.png" style="width: 50px; height: 50px; border-radius: 200px; background-color: none;" id="noteicon">
-<p style="font-family: Comic Sans MS; font-size: 20px; transform: translateY(-25px);">Notes</p>
+<p style="font-family: Comic Sans MS; font-size: 20px; transform: translateY(-30px);">Notes</p>
+
+<div>
+  <img src="osimg/hackatime.png" style="width:50px; height:50px;border-radius: 200px; background-color: none; transform: translateY(-50px);" id="staticon">
+  <p style="font-family: Comic Sans MS; font-size: 20px; transform: translateY(-80px);">My Stats</p>
 </div>
+</div>
+
 
 </div>
 
   <div id="noteswindow" style="border: 3px solid rgb(241, 170, 55); width: 500px; height: 400px; color: rgb(255, 255, 255); font-family: Comic Sans MS; padding-left: 10px; background-color: rgb(201, 239, 246); display: none;">
     <button id="closenotes" style="background-color: red; width:30px; height: 30px;"><strong>X</strong></button>
-    <h1 style="font-family:Inter !important; font-weight: 100; position: absolute; display: flex; align-self: center; justify-self: center; top: 0px; transform: translateX(220px);">Notes</h1>
-    <textarea  id="notestxt" placeholder="Release your thoughts....." style="width: 480px; height: 370px;" rows="10" cols="50"></textarea>
+    <h1 style="font-family:Inter !important; font-weight: 100; position: absolute; display: flex; align-self: center; justify-self: center; top: 0px; transform: translateX(210px); color: black;">Notes</h1>
+    <textarea  id="notestxt" placeholder="Release your thoughts....." style="width: 480px; height: 320px; transform: translateY(70px);" rows="10" cols="50"></textarea>
     <button id="savebtn">Save Notes?</button>
     <div id="notesContainer"></div>
 
   </div>
-
+ <div id="statwindow" style="position: absolute; bottom: 0; left: 65%; display: none;">
+     <img src=" https://github-readme-stats.hackclub.dev/api/wakatime?username=20979&api_domain=hackatime.hackclub.com&theme=rose&custom_title=Hackatime+Stats&layout=compact&cache_seconds=0&langs_count=8" style="z-index: 1;">
+      <button id="closestats" style="background-color: red; width:30px; height: 30px; position: fixed; top:8px; right:8px; z-index: 9999;"><strong>X</strong></button>
+    </div>
 
   <header>
     <div id="clock">
