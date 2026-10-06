@@ -12,6 +12,26 @@
 <body>
   <div id="background" aria-hidden="true"></div>
 <div id="fpstxt" style="color: black; position: absolute; top: 0px; left: 0px; background-color: white; font-family: Comic Sans MS;">FPS: <span id="fps">0</span></div>
+
+<div id="apps" style="padding-top: 64px; padding-left: 16px;">
+
+<div style="text-align: center; box-shadow: 0 0 8px black; width: fit-content; height: 50px; background-color: none;">
+<img src="osimg/notes.png" style="width: 50px; height: 50px; border-radius: 200px; background-color: none;" id="noteicon">
+<p style="font-family: Comic Sans MS; font-size: 20px; transform: translateY(-25px);">Notes</p>
+</div>
+
+</div>
+
+  <div id="noteswindow" style="border: 3px solid rgb(241, 170, 55); width: 500px; height: 400px; color: rgb(255, 255, 255); font-family: Comic Sans MS; padding-left: 10px; background-color: rgb(201, 239, 246); display: none;">
+    <button id="closenotes" style="background-color: red; width:30px; height: 30px;"><strong>X</strong></button>
+    <h1 style="font-family:Inter !important; font-weight: 100; position: absolute; display: flex; align-self: center; justify-self: center; top: 0px; transform: translateX(220px);">Notes</h1>
+    <textarea  id="notestxt" placeholder="Release your thoughts....." style="width: 480px; height: 370px;" rows="10" cols="50"></textarea>
+    <button id="savebtn">Save Notes?</button>
+    <div id="notesContainer"></div>
+
+  </div>
+
+
   <header>
     <div id="clock">
       <div id="day"></div>

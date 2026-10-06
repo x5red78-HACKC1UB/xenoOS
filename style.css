@@ -25,6 +25,12 @@ body{
   opacity: 1;
   transition: opacity 500ms ease;
 }
+#noteswindow {
+  position: fixed;
+  top: 100px;
+  left: 100px;
+  z-index: 10;
+}
 main{
     flex: 1;
     min-height: 0;
@@ -35,6 +41,7 @@ main{
 header{
     display: flex;
     position: absolute;
+    pointer-events: none;
      font-family: "Inter", sans-serif !important;
   font-optical-sizing: auto;
   font-weight: 50 !important;

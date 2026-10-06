@@ -4,12 +4,19 @@ const day=document.getElementById("day");
 const time=document.getElementById("time");
 const bg=document.getElementById("background");
 const welcome=document.getElementById("welcomewindow"); // id's
+const notes=document.getElementById("noteswindow");
+const notesicon=document.getElementById("noteicon");
 const xbutton=document.getElementById("closebutton");
+const xnotes=document.getElementById("closenotes");
+const notetext=document.getElementById("notestxt");
+const savebtn=document.getElementById("savebtn");
+const notescontainer=document.getElementById("notesContainer");
 const fpscalc=document.getElementById("fps");
 
 let fpstime = performance.now();
 let frames = 0; //fps variable
 let theme = 0;
+let selectedapp=undefined;
 
 const bgimg = [
   "url('images/gojo.jpg') center/cover no-repeat",
@@ -40,11 +47,35 @@ function closewindow(element) {
   element.style.display ="none"
 }
 function openwindow(element) {
-  element.style.display ="flax"
+  element.style.display ="flex"
+};
+function SelectApp(app) {
+  app.classList.add("selected");
+  app.style.backgroundColor="rgba(109, 160, 174, 0.28)";
+  selectedapp=app;
+}
+function DeselectApp(app) {
+  app.classList.remove("selected");
+  selectedapp=undefined;
+}
+function isappselected(app) {
+  if (app.classList.contains("selected")) {
+    DeselectApp(app);
+
+  } else {
+    SelectApp(app);
+  }
 }
 
 xbutton.addEventListener("click",()=>{
 closewindow(welcome);
+});
+xnotes.addEventListener("click",()=>{
+closewindow(notes);
+});
+notesicon.addEventListener("click",()=>{
+  isappselected(notesicon)
+openwindow(notes);
 });
 
  bg.style.background=bgimg[theme];
@@ -306,6 +337,7 @@ async function imgshift(){
     }
 imgshift();
 DragElement(welcome); // Allow the welcome const to be draggable
+DragElement(notes);
 function DragElement(element){ //dragging fuction
 var initialX =0; // x value of where the window orginally was
 var initialY=0; //y value of orginal position

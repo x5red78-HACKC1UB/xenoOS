@@ -1,4 +1,4 @@
 {
-    "editor.inlineSuggest.enabled": false, 
-    "liveServer.settings.port": 5501
+    "editor.inlineSuggest.enabled": true, 
+    "liveServer.settings.port": 5503
 }
