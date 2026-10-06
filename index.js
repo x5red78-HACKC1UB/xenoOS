@@ -8,7 +8,7 @@ const notes=document.getElementById("noteswindow");
 const notesicon=document.getElementById("noteicon");
 const xbutton=document.getElementById("closebutton");
 const xnotes=document.getElementById("closenotes");
-const notetext=document.getElementById("notestxt");
+const noteinput=document.getElementById("notestxt");
 const savebtn=document.getElementById("savebtn");
 const notescontainer=document.getElementById("notesContainer");
 const fpscalc=document.getElementById("fps");
@@ -17,6 +17,17 @@ let fpstime = performance.now();
 let frames = 0; //fps variable
 let theme = 0;
 let selectedapp=undefined;
+savebtn.addEventListener("click",()=>{
+const notetext =noteinput.value.trim()
+if (notetext==='') {
+  window.alert("Don't be shy... Release your thoughts :p")
+}
+const noteElement= document.createElement('p')
+ noteElement.textContent = notetext;
+  notescontainer.appendChild(noteElement);
+  noteinput.textContent=noteElement;
+  window.alert(`Saved message"${notetext}"`);
+});
 
 const bgimg = [
   "url('images/gojo.jpg') center/cover no-repeat",
@@ -352,6 +363,9 @@ element.onmousedown = StartDragging; // when you hold down on the mouse start dr
 }
 
 function StartDragging(e) {
+   if (e.target.tagName === 'TEXTAREA' || e.target.tagName === 'INPUT' || e.target.tagName === 'BUTTON') {
+    return; // Don't prevent typing
+  }
   e.preventDefault();
 
   initialX=e.clientX;
