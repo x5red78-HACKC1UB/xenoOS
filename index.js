@@ -1,16 +1,19 @@
 const imgtime=(ms)=> new Promise((resolve) => setTimeout(resolve,ms));
 
-const day=document.getElementById("day");
+const day=document.getElementById("day"); //time id's
 const time=document.getElementById("time");
+
 const bg=document.getElementById("background");
-const welcome=document.getElementById("welcomewindow"); // id's
+const welcome=document.getElementById("welcomewindow"); // bg
+
 const notes=document.getElementById("noteswindow");
 const notesicon=document.getElementById("noteicon");
-const xbutton=document.getElementById("closebutton");
+const xbutton=document.getElementById("closebutton"); //notes id
 const xnotes=document.getElementById("closenotes");
 const noteinput=document.getElementById("notestxt");
 const savebtn=document.getElementById("savebtn");
 const notescontainer=document.getElementById("notesContainer");
+
 const fpscalc=document.getElementById("fps");
 
 let fpstime = performance.now();
