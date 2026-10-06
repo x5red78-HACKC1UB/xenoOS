@@ -22,10 +22,7 @@ const notetext =noteinput.value.trim()
 if (notetext==='') {
   window.alert("Don't be shy... Release your thoughts :p")
 }
-const noteElement= document.createElement('p')
- noteElement.textContent = notetext;
-  notescontainer.appendChild(noteElement);
-  noteinput.textContent=noteElement;
+
   window.alert(`Saved message"${notetext}"`);
 });
 
