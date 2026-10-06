@@ -13,6 +13,7 @@ const xnotes=document.getElementById("closenotes");
 const noteinput=document.getElementById("notestxt");
 const savebtn=document.getElementById("savebtn");
 const notescontainer=document.getElementById("notesContainer");
+const storednotes=localStorage.getItem("savednotes");
 
 const fpscalc=document.getElementById("fps");
 
@@ -20,13 +21,17 @@ let fpstime = performance.now();
 let frames = 0; //fps variable
 let theme = 0;
 let selectedapp=undefined;
+
 savebtn.addEventListener("click",()=>{
 const notetext =noteinput.value.trim()
 if (notetext==='') {
-  window.alert("Don't be shy... Release your thoughts :p")
+  window.alert("Cleared!")
 }
+localStorage.setItem("savednotes" , notetext)
+if (!(notetext==='')) {
 
-  window.alert(`Saved message"${notetext}"`);
+  window.alert(`Saved!`); 
+}
 });
 
 const bgimg = [
@@ -83,6 +88,7 @@ closewindow(welcome);
 });
 xnotes.addEventListener("click",()=>{
 closewindow(notes);
+notetext ='';
 });
 notesicon.addEventListener("click",()=>{
   isappselected(notesicon)
@@ -402,3 +408,6 @@ if (elapsedtime>=1000) {
 requestAnimationFrame(Updatefps);
 }
 Updatefps();
+if (storednotes) {
+    noteinput.value =storednotes;
+  }
