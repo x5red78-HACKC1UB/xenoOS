@@ -12,14 +12,19 @@ const xbutton=document.getElementById("closebutton"); //notes id
 const xnotes=document.getElementById("closenotes");
 const noteinput=document.getElementById("notestxt");
 const savebtn=document.getElementById("savebtn");
-const notescontainer=document.getElementById("notesContainer");
 const storednotes=localStorage.getItem("savednotes");
 
 const staticon=document.getElementById("staticon");
 const statwindow= document.getElementById("statwindow"); //stats id's
-const closestats=document.getElementById("closestats")
+const closestats=document.getElementById("closestats");
+
+const settingicon=document.getElementById("settingicon");
+const settingwindow=document.getElementById("settingwindow");
+const settingbutton1=document.getElementById("setting1");
+const closesettings=document.getElementById("closesettings");
 
 const fpscalc=document.getElementById("fps");
+let howmanyseconds=60;
 
 let fpstime = performance.now();
 let frames = 0; //fps variable
@@ -38,7 +43,7 @@ if (!(notetext==='')) {
 }
 });
 
-const bgimg = [
+let bgimg = [
   "url('images/gojo.jpg') center/cover no-repeat",
   "url('images/choso.jpg') center/cover no-repeat",
   "url('images/$KASHIMO$.webp') center/cover no-repeat", //background img url
@@ -59,7 +64,7 @@ const bgimg = [
   "url('images/toji.png') center/cover no-repeat",
   "url('images/yuki.png') center/cover no-repeat",
 ];
-const bgnames=[ //Names of img in the code
+let bgnames=[ //Names of img in the code
 "gojo", "choso", "kashimo", "120", "hakari", "hakari2", "higuruma", "JUDAS", "mahito","megumi", "meguna", "nanamin", "naoya", "ryu", "sendai", "takaba", "todo", "toji", "yuki"
 ];
 
@@ -97,6 +102,9 @@ notetext ='';
 closestats.addEventListener("click",()=>{
 closewindow(statwindow);
 });
+closesettings.addEventListener("click",()=>{
+closewindow(settingwindow);
+});
 notesicon.addEventListener("click",()=>{
   isappselected(notesicon)
 openwindow(notes);
@@ -105,7 +113,19 @@ staticon.addEventListener("click",()=>{
 isappselected(staticon);
 openwindow(statwindow);
 });
+settingicon.addEventListener("click",()=>{
+isappselected(settingicon);
+openwindow(settingwindow);
+});
 
+settingbutton1.addEventListener("click",()=>{
+let answer=window.prompt("How often do you want the background to switch?(in seconds, and applies after a switch)");
+
+if (!Number.isFinite(answer) ==="NaN" || "null") {
+  window.alert("put a NUMBER genius...")
+}
+howmanyseconds=Number(answer);
+});
 
  bg.style.background=bgimg[theme];
  day.style.marginLeft="150px"
@@ -357,7 +377,7 @@ async function fadein() {
 async function imgshift(){
    bg.style.background = "url('images/gojo.jpg') center/cover no-repeat";
    while(true){
-    await imgtime(60000);
+    await imgtime(howmanyseconds*1000);
   fadein();
   await imgtime(600);
   theme = (theme + 1) % bgimg.length;
