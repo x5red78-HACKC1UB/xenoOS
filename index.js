@@ -120,11 +120,13 @@ openwindow(settingwindow);
 
 settingbutton1.addEventListener("click",()=>{
 let answer=window.prompt("How often do you want the background to switch?(in seconds, and applies after a switch)");
+const seconds=Number(answer);
 
-if (!Number.isFinite(answer) ==="NaN" || "null") {
-  window.alert("put a NUMBER genius...")
+if (answer ===null||answer.trim()===""||!Number.isFinite(seconds)) {
+  window.alert("put a NUMBER genius....")
+} else {
+  howmanyseconds =seconds;
 }
-howmanyseconds=Number(answer);
 });
 
  bg.style.background=bgimg[theme];
