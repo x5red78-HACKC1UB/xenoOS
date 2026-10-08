@@ -24,13 +24,13 @@ const settingbutton1=document.getElementById("setting1");
 const closesettings=document.getElementById("closesettings");
 
 const abtmewindow=document.getElementById("aboutmewindow");
-const abtmeicon=document.getElementById("abtmeicon");
+const abtmeicon=document.getElementById("abtmeicon");// About Me window
 const closeabtme=document.getElementById("closeabtme")
 
 const fpscalc=document.getElementById("fps");
 let howmanyseconds=60;
 
-let fpstime = performance.now();
+let fpstime = performance.now();  //fps variables
 let frames = 0; //fps variable
 let theme = 0;
 let selectedapp=undefined;
@@ -40,7 +40,7 @@ const notetext =noteinput.value.trim()
 if (notetext==='') {
   window.alert("Cleared!")
 }
-localStorage.setItem("savednotes" , notetext)
+localStorage.setItem("savednotes" , notetext) // Notes Saving
 if (!(notetext==='')) {
 
   window.alert(`Saved!`); 
@@ -71,9 +71,9 @@ let bgimg = [
 let bgnames=[ //Names of img in the code
 "gojo", "choso", "kashimo", "120", "hakari", "hakari2", "higuruma", "JUDAS", "mahito","megumi", "meguna", "nanamin", "naoya", "ryu", "sendai", "takaba", "todo", "toji", "yuki"
 ];
-
+//Self-explainatory
 function closewindow(element) {
-  element.style.display ="none"
+  element.style.display ="none" 
 }
 function openwindow(element, display = "flex") {
   element.style.display = display
@@ -95,7 +95,7 @@ function isappselected(app) {
     SelectApp(app);
   }
 }
-
+// event listeners
 xbutton.addEventListener("click",()=>{
 closewindow(welcome);
 });
@@ -145,6 +145,7 @@ if (answer ===null||answer.trim()===""||!Number.isFinite(seconds)) {
     time.style.marginLeft="130px";
 day.style.color="rgb(49, 49, 82)"
 time.style.color="rgb(49, 49, 82)"
+// LARGE background switching code
 function themeswitch(name) {
   switch (name) {
     case "gojo":
@@ -303,6 +304,7 @@ time.style.color="rgb(249, 7, 205)"
     break;
   }
 }
+//fade animation(kinda broken bc of my img size)
 async function fadein() {
    bg.style.opacity=1;
     await imgtime(30);
@@ -398,8 +400,11 @@ async function imgshift(){
 }
     }
 imgshift();
-DragElement(welcome); // Allow the welcome const to be draggable
+DragElement(welcome); // Allows windowsto be draggable
 DragElement(notes);
+DragElement(settingwindow);
+DragElement(abtmewindow);
+//dragging area
 function DragElement(element){ //dragging fuction
 var initialX =0; // x value of where the window orginally was
 var initialY=0; //y value of orginal position
@@ -442,7 +447,7 @@ function StopDragging() {
 }
 function Updatefps(){
 frames++;
-const now=performance.now();
+const now=performance.now(); //fps calc's
 const elapsedtime=now-fpstime;
 if (elapsedtime>=1000) {
   const framespersecond =Math.round((frames*1000)/elapsedtime);
