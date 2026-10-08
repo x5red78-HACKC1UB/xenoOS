@@ -23,6 +23,8 @@ const settingwindow=document.getElementById("settingwindow");
 const settingbutton1=document.getElementById("setting1");
 const closesettings=document.getElementById("closesettings");
 
+const abtmewindow=document.getElementById("aboutmewindow")
+
 const fpscalc=document.getElementById("fps");
 let howmanyseconds=60;
 
