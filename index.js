@@ -23,7 +23,9 @@ const settingwindow=document.getElementById("settingwindow");
 const settingbutton1=document.getElementById("setting1");
 const closesettings=document.getElementById("closesettings");
 
-const abtmewindow=document.getElementById("aboutmewindow")
+const abtmewindow=document.getElementById("aboutmewindow");
+const abtmeicon=document.getElementById("abtmeicon");
+const closeabtme=document.getElementById("closeabtme")
 
 const fpscalc=document.getElementById("fps");
 let howmanyseconds=60;
@@ -73,8 +75,8 @@ let bgnames=[ //Names of img in the code
 function closewindow(element) {
   element.style.display ="none"
 }
-function openwindow(element) {
-  element.style.display ="flex"
+function openwindow(element, display = "flex") {
+  element.style.display = display
 };
 function SelectApp(app) {
   app.classList.add("selected");
@@ -107,6 +109,9 @@ closewindow(statwindow);
 closesettings.addEventListener("click",()=>{
 closewindow(settingwindow);
 });
+closeabtme.addEventListener("click",()=>{
+closewindow(abtmewindow);
+});
 notesicon.addEventListener("click",()=>{
   isappselected(notesicon)
 openwindow(notes);
@@ -118,6 +123,10 @@ openwindow(statwindow);
 settingicon.addEventListener("click",()=>{
 isappselected(settingicon);
 openwindow(settingwindow);
+});
+abtmeicon.addEventListener("click",()=>{
+isappselected(abtmeicon);
+openwindow(abtmewindow, "block");
 });
 
 settingbutton1.addEventListener("click",()=>{
