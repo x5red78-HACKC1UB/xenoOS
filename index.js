@@ -25,7 +25,10 @@ const closesettings=document.getElementById("closesettings");
 
 const abtmewindow=document.getElementById("aboutmewindow");
 const abtmeicon=document.getElementById("abtmeicon");// About Me window
-const closeabtme=document.getElementById("closeabtme")
+const closeabtme=document.getElementById("closeabtme");
+
+const tiktok=document.getElementById("TT");
+const email=document.getElementById("email")
 
 const fpscalc=document.getElementById("fps");
 let howmanyseconds=60;
@@ -128,6 +131,16 @@ abtmeicon.addEventListener("click",()=>{
 isappselected(abtmeicon);
 openwindow(abtmewindow, "block");
 });
+
+
+
+tiktok.addEventListener("click",()=>{
+window.location.href = "https://www.tiktok.com/@chromixhere";
+});
+email.addEventListener("click",()=>{
+window.location.href ="mailto:x5red78@gmail.com"
+});
+
 
 settingbutton1.addEventListener("click",()=>{
 let answer=window.prompt("How often do you want the background to switch?(in seconds, and applies after a switch)");
