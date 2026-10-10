@@ -27,6 +27,10 @@ const abtmewindow=document.getElementById("aboutmewindow");
 const abtmeicon=document.getElementById("abtmeicon");// About Me window
 const closeabtme=document.getElementById("closeabtme");
 
+const seaweedwindow=document.getElementById("seaweedwindow");
+const closeseaweed=document.getElementById("closeseaweed");
+const seaweedicon=document.getElementById("seaweedicon");
+
 const tiktok=document.getElementById("TT");
 const email=document.getElementById("email")
 
@@ -106,7 +110,7 @@ xnotes.addEventListener("click",()=>{
 closewindow(notes);
 notetext ='';
 });
-closestats.addEventListener("click",()=>{
+closestats.addEventListener("click",()=>{ // X buttons!
 closewindow(statwindow);
 });
 closesettings.addEventListener("click",()=>{
@@ -115,6 +119,11 @@ closewindow(settingwindow);
 closeabtme.addEventListener("click",()=>{
 closewindow(abtmewindow);
 });
+closeseaweed.addEventListener("click",()=>{
+closewindow(seaweedwindow);
+});
+
+
 notesicon.addEventListener("click",()=>{
   isappselected(notesicon)
 openwindow(notes);
@@ -125,18 +134,22 @@ openwindow(statwindow);
 });
 settingicon.addEventListener("click",()=>{
 isappselected(settingicon);
-openwindow(settingwindow);
+openwindow(settingwindow);    // CLICKING ICONS
 });
 abtmeicon.addEventListener("click",()=>{
 isappselected(abtmeicon);
 openwindow(abtmewindow, "block");
+});
+seaweedicon.addEventListener("click",()=>{
+isappselected(seaweedicon);
+openwindow(seaweedwindow,"block");
 });
 
 
 
 tiktok.addEventListener("click",()=>{
 window.location.href = "https://www.tiktok.com/@chromixhere";
-});
+});                                                            //Contacts
 email.addEventListener("click",()=>{
 window.location.href ="mailto:x5red78@gmail.com"
 });

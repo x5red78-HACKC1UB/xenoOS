@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
+  <!--Icons-->
   <div id="background" aria-hidden="true"></div>
 <div id="fpstxt" style="color: black; position: absolute; top: 0px; left: 0px; background-color: white; font-family: Comic Sans MS;">FPS: <span id="fps">0</span></div> 
 
@@ -33,11 +34,15 @@
   <img src="osimg/kirby.png" style="width:50px; height:50px; border-radius: 200px; background-color: none; transform: translateY(-150px);" id="abtmeicon"> <!--about me icon-->
   <p style="font-family: Comic Sans MS; font-size: 20px; transform: translateY(-180px);">About Me!</p>
 
+  <img src="osimg/seaweed.webp" style="width: 50px; height: 50px; border-radius: 220px; background-color: none; transform: translateY(-200px);" id="seaweedicon" >
+  <p style="font-family: Comic Sans MS; font-size: 20px; transform: translateY(-230px);">seaweed clicker</p>
+
 </div>
 
 
 </div>
 
+<!--WINDOWS-->
   <div id="noteswindow" style="border: 3px solid rgb(241, 170, 55); width: 500px; height: 400px; color: rgb(255, 255, 255); font-family: Comic Sans MS; padding-left: 10px; background-color: rgb(201, 239, 246); display: none;">
     <button id="closenotes" style="background-color: red; width:30px; height: 30px;"><strong>X</strong></button>
     <h1 style="font-family:Inter !important; font-weight: 100; position: absolute; display: flex; align-self: center; justify-self: center; top: 0px; transform: translateX(210px); color: black;">Notes</h1> <!--notes WINdow-->
@@ -88,7 +93,26 @@
       </ul>
       <button id="TT" style="border: 3px rgb(47, 22, 47) solid; background-color: rgb(71, 71, 150); transform: translateY(40px); border-radius: 6px; padding-bottom:5px ;">My tiktok</button>
       <button id="email" style=" border: 3px rgb(241, 68, 68) solid; border-radius: 4px; transform: translateY(40px); padding-bottom: 5px;">My email</button>
+      <p style="transform: translateY(20px);"><small>small shoutout to ESA Hack club :P</small></p>
+      <h1>AYO OWES EVERYONE CANDY</h1>
     </div>
+
+    <div id="seaweedwindow" style=" background-color: rgb(192, 254, 192); width: 1100px; height: 700px; z-index: 20; position: absolute; transform: translate(200px,50px); border-radius: 10px; border: 3px rgb(7, 39, 7) solid; display:none">
+            <button id="closeseaweed" style="background-color:red; width:30px; height:30px; position: absolute; top: 0px; right: 0px;"><strong>X</strong></button>
+            <div class="seaweedmenu" style="display: flex; flex-direction: column; align-items: center; padding-top: 50px; ">
+              
+      <h1 style="font-family: Comic Sans MS;">0 layers of seaweed</h1>
+<button id="seaweedbutton" style="width:fit-content; height: fit-content; background: none; border: none;">
+<img src="osimg/seaweedclick.png" width="220" height="220">
+</button>
+</div>
+
+<div id="shop" style="border: none; border-radius: 5px; background-color: black; height: 675px; width: 300px; position: absolute; right: 0px; transform: translateY(-335px); display: flex; flex-direction: column;">
+
+</div>
+
+    </div>
+
 
   <header>
     <div id="clock">
