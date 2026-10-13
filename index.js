@@ -30,6 +30,15 @@ const closeabtme=document.getElementById("closeabtme");
 const seaweedwindow=document.getElementById("seaweedwindow");
 const closeseaweed=document.getElementById("closeseaweed");
 const seaweedicon=document.getElementById("seaweedicon");
+const seaweedbutton=document.getElementById("seaweedbutton");
+const seaweedtxt=document.getElementById("seaweedtxt");
+let seaweed = 0;
+let seaweedmultipler=1;
+let extraseaweed=1;
+seaweedbutton.addEventListener("click",()=>{
+  seaweed+=(0+extraseaweed)*seaweedmultipler;
+  seaweedtxt.textContent=`${seaweed} layers of seaweed`
+})
 
 const tiktok=document.getElementById("TT");
 const email=document.getElementById("email")
@@ -430,6 +439,7 @@ DragElement(welcome); // Allows windowsto be draggable
 DragElement(notes);
 DragElement(settingwindow);
 DragElement(abtmewindow);
+DragElement(seaweedwindow);
 //dragging area
 function DragElement(element){ //dragging fuction
 var initialX =0; // x value of where the window orginally was
