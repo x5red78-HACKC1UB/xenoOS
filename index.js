@@ -32,13 +32,25 @@ const closeseaweed=document.getElementById("closeseaweed");
 const seaweedicon=document.getElementById("seaweedicon");
 const seaweedbutton=document.getElementById("seaweedbutton");
 const seaweedtxt=document.getElementById("seaweedtxt");
+const buyupgrade1 = document.getElementById("buyupgrade1");
 let seaweed = 0;
 let seaweedmultipler=1;
 let extraseaweed=1;
+let cost1 = 10;
+
 seaweedbutton.addEventListener("click",()=>{
   seaweed+=(0+extraseaweed)*seaweedmultipler;
-  seaweedtxt.textContent=`${seaweed} layers of seaweed`
-})
+  seaweedtxt.textContent=`${seaweed} layers of seaweed`;
+});
+buyupgrade1.addEventListener("click",()=>{
+if (seaweed>=cost1) {
+   seaweed-=cost1;
+   extraseaweed+=1;
+    seaweedtxt.textContent=`${seaweed} layers of seaweed`;
+} else {
+  
+}
+});
 
 const tiktok=document.getElementById("TT");
 const email=document.getElementById("email")
