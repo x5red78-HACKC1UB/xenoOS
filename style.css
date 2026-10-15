@@ -80,3 +80,12 @@ header{
    margin-top: 15px;
    color: rgb(49, 49, 82);
 }
+#seaweedbutton{
+  transition: 0.2ms ease;
+}
+#seaweedbutton:hover{
+  transform: scale(1.05);
+}
+#seaweedbutton:active{
+  transform: scale(0.85);
+}

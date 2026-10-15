@@ -33,23 +33,21 @@ const seaweedicon=document.getElementById("seaweedicon");
 const seaweedbutton=document.getElementById("seaweedbutton");
 const seaweedtxt=document.getElementById("seaweedtxt");
 const buyupgrade1 = document.getElementById("buyupgrade1");
+const costtxt1= document.getElementById("costtxt");
 let seaweed = 0;
 let seaweedmultipler=1;
 let extraseaweed=1;
+let seaweedpersec=0
 let cost1 = 10;
-
+function autoseaweed() {
+  setInterval(() => {
+    seaweed+=seaweedpersec;
+  }, 1000);
+}
+autoseaweed();
 seaweedbutton.addEventListener("click",()=>{
   seaweed+=(0+extraseaweed)*seaweedmultipler;
   seaweedtxt.textContent=`${seaweed} layers of seaweed`;
-});
-buyupgrade1.addEventListener("click",()=>{
-if (seaweed>=cost1) {
-   seaweed-=cost1;
-   extraseaweed+=1;
-    seaweedtxt.textContent=`${seaweed} layers of seaweed`;
-} else {
-  
-}
 });
 
 const tiktok=document.getElementById("TT");
@@ -164,6 +162,24 @@ openwindow(abtmewindow, "block");
 seaweedicon.addEventListener("click",()=>{
 isappselected(seaweedicon);
 openwindow(seaweedwindow,"block");
+});
+
+
+buyupgrade1.addEventListener("click",()=>{
+if (seaweed>=cost1) {
+   seaweed-=cost1;
+   extraseaweed+=1;
+    seaweedtxt.textContent=`${seaweed} layers of seaweed`;
+    cost1= Math.floor(cost1*1.2);
+    costtxt1.textContent=`Cost:${cost1}`
+} else {
+  window.alert("Not enough lil bro");
+  if(seaweedmultipler===1 && seaweedpersec===0 && extraseaweed===1){
+window,alert("Yk, i'm lowk ashamed. You're too lazy to click a button 10 times? Do i need to to put subway surfer to help you? You have to be punished for this, bc this ragebait. Why did you even open the app....")
+closewindow(seaweedwindow);
+seaweedicon.style.display=hidden;
+  }
+}
 });
 
 
