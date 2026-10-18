@@ -34,11 +34,15 @@ const seaweedbutton=document.getElementById("seaweedbutton");
 const seaweedtxt=document.getElementById("seaweedtxt");
 const buyupgrade1 = document.getElementById("buyupgrade1");
 const costtxt1= document.getElementById("costtxt");
+const buyupgrade2=document.getElementById("buyupgrade2");
+const costtxt2=document.getElementById("costtxt2")
+
 let seaweed = 0;
 let seaweedmultipler=1;
 let extraseaweed=1;
 let seaweedpersec=0
 let cost1 = 10;
+let cost2=25;
 function autoseaweed() {
   setInterval(() => {
     seaweed+=seaweedpersec;
@@ -175,10 +179,20 @@ if (seaweed>=cost1) {
 } else {
   window.alert("Not enough lil bro");
   if(seaweedmultipler===1 && seaweedpersec===0 && extraseaweed===1){
-window,alert("Yk, i'm lowk ashamed. You're too lazy to click a button 10 times? Do i need to to put subway surfer to help you? You have to be punished for this, bc this ragebait. Why did you even open the app....")
+window.alert("Yk, i'm lowk ashamed. You're too lazy to click a button 10 times? Do i need to to put subway surfer to help you? You have to be punished for this, bc this ragebait. Why did you even open the app....")
 closewindow(seaweedwindow);
 seaweedicon.style.display=hidden;
   }
+}
+});
+buyupgrade2.addEventListener("click",()=>{
+if (seaweed>=cost2) {
+  seaweed-=cost2;
+  seaweedpersec+=1;
+  seaweedtxt.textContent=`${seaweed} layers of seaweed`
+  cost2=Math.floor(cost2*1.2);
+} else {
+  window.alert("NO")
 }
 });
 
