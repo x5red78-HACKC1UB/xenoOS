@@ -32,10 +32,11 @@ const closeseaweed=document.getElementById("closeseaweed");
 const seaweedicon=document.getElementById("seaweedicon");
 const seaweedbutton=document.getElementById("seaweedbutton");
 const seaweedtxt=document.getElementById("seaweedtxt");
-const buyupgrade1 = document.getElementById("buyupgrade1");
-const costtxt1= document.getElementById("costtxt");
-const buyupgrade2=document.getElementById("buyupgrade2");
-const costtxt2=document.getElementById("costtxt2")
+const shop=document.getElementById("shop");
+const upgrades=[
+  {name:"Extra seaweed", cost:10, spc:1},
+  {name:"Auto Seaweed", cost:25, sps:1}
+]
 
 let seaweed = 0;
 let seaweedmultipler=1;
@@ -53,9 +54,42 @@ seaweedbutton.addEventListener("click",()=>{
   seaweed+=(0+extraseaweed)*seaweedmultipler;
   seaweedtxt.textContent=`${seaweed} layers of seaweed`;
 });
+upgrades.forEach((upgrade, index) => {
+  const upgradecontainer = document.createElement("div");
+  const button = document.createElement("button");
+  const name=document.createElement("h1")
+name.classList.add("name")
+  name.textContent =upgrade.name;
+  upgradecontainer.classList.add("shopcontainer");
+  button.classList.add("upgrade")
+  button.textContent = `Buy | ${upgrade.cost} seaweed`;
+
+  button.addEventListener("click", () => {
+    if (seaweed >= upgrade.cost) {
+      seaweed -= upgrade.cost;
+
+      if (upgrade.spc) {
+        extraseaweed += upgrade.spc;
+      }
+
+      if (upgrade.sps) {
+        seaweedpersec += upgrade.sps;
+      }
+
+      upgrade.cost = Math.floor(upgrade.cost * 1.2);
+
+      button.textContent = `Buy | ${upgrade.cost} seaweed`;
+      seaweedtxt.textContent = `${seaweed} layers of seaweed`;
+    }
+  });
+upgradecontainer.appendChild(name);
+  upgradecontainer.appendChild(button);
+  shop.appendChild(upgradecontainer);
+});
+
 
 const tiktok=document.getElementById("TT");
-const email=document.getElementById("email")
+const email=document.getElementById("email");
 
 const fpscalc=document.getElementById("fps");
 let howmanyseconds=60;
@@ -168,33 +202,6 @@ isappselected(seaweedicon);
 openwindow(seaweedwindow,"block");
 });
 
-
-buyupgrade1.addEventListener("click",()=>{
-if (seaweed>=cost1) {
-   seaweed-=cost1;
-   extraseaweed+=1;
-    seaweedtxt.textContent=`${seaweed} layers of seaweed`;
-    cost1= Math.floor(cost1*1.2);
-    costtxt1.textContent=`Cost:${cost1}`
-} else {
-  window.alert("Not enough lil bro");
-  if(seaweedmultipler===1 && seaweedpersec===0 && extraseaweed===1){
-window.alert("Yk, i'm lowk ashamed. You're too lazy to click a button 10 times? Do i need to to put subway surfer to help you? You have to be punished for this, bc this ragebait. Why did you even open the app....")
-closewindow(seaweedwindow);
-seaweedicon.style.display=hidden;
-  }
-}
-});
-buyupgrade2.addEventListener("click",()=>{
-if (seaweed>=cost2) {
-  seaweed-=cost2;
-  seaweedpersec+=1;
-  seaweedtxt.textContent=`${seaweed} layers of seaweed`
-  cost2=Math.floor(cost2*1.2);
-} else {
-  window.alert("NO")
-}
-});
 
 
 
