@@ -1,18 +1,33 @@
 # xenoOS
-My first OS
-Also my new portfolio
-This was for stardance but now for terra
-I'm trying to put as much as possible in this OS
-What I have so far:
-notes app
-in-progress clicker
-about me
-Ok bye!
-Also the web if you want to contact me or just say hi
-I also increased the resolution of the img
-Low ai usage for the fps counter.
-*High Effort*
-by Chromix5..
-also I like seaweed
+This is my first ever OS and My new Website! It's a massive improvement from the old one. Also it has apps!
+Apps so far:
+Notes
+My stats
+Settings
+About Me
+Seaweed Clicker
+I also figured out how to change and add a transition to my background. Unfortunately, some of the higher quality ones take time 2 load....... gotta fixed that.
+PROJECT FOR TERRA
+(I rlly need that laptop)
+
+I already have a lot of big feature I want bc I plan for this project to last the whole 12 weeks lol
+
+Small fixes needed:
+CSS loading/pre-loading
+Z -index positioning errors
+Non-fullscreen support(to make the window feel less cluttered)
+
+List of features to be added:
+Minigame
+Night mode??????(yeah idk either)
+Faq
+Music player
+More OS settings
+404 page
+Searching up stuff
+
+
+Update 1.0
+The whole OS!(bugs/progression needed)
 
  
