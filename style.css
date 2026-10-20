@@ -96,3 +96,23 @@ header{
   border: none; 
   transition: 0.2s ease;
 }
+.upgrade{
+  background-color: azure;
+   border-radius: 15px;
+    border: none; 
+    padding: 10px 16px; 
+    font-family: Comic Sans MS;
+    transform: translateY(-20px);
+}
+.shopcontainer{
+  width: inherit;
+   height: 140px; 
+   background-color: rgb(49, 49, 49); 
+   border-radius: 15px; 
+   color: white;
+   transform: translateY(-115px);
+}
+.name{
+transform: translateY(-20px);
+font-size: 24px;
+}
