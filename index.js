@@ -35,7 +35,9 @@ const seaweedtxt=document.getElementById("seaweedtxt");
 const shop=document.getElementById("shop");
 const upgrades=[
   {name:"Extra seaweed", cost:10, spc:1},
-  {name:"Auto Seaweed", cost:25, sps:1}
+  {name:"Auto Seaweed", cost:25, sps:1},
+  {name:"Sushi Stealer", cost:65, sps:3},
+  {name:"Seaweed farm", cost:500, spc:5}
 ]
 
 let seaweed = 0;
@@ -47,7 +49,7 @@ let cost2=25;
 function autoseaweed() {
   setInterval(() => {
     seaweed+=seaweedpersec;
-    seaweedtxt.textContent=`${seaweed} layer of seaweed`;
+    seaweedtxt.textContent=`${seaweed} layers of seaweed`;
   }, 1000);
 }
 autoseaweed();
@@ -77,7 +79,7 @@ name.classList.add("name")
         seaweedpersec += upgrade.sps;
       }
 
-      upgrade.cost = Math.floor(upgrade.cost * 1.2);
+      upgrade.cost = Math.floor(upgrade.cost * 1.15);
 
       button.textContent = `Buy | ${upgrade.cost} seaweed`;
       seaweedtxt.textContent = `${seaweed} layers of seaweed`;
