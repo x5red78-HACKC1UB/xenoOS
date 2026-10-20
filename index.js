@@ -42,6 +42,7 @@ let cost1 = 10;
 function autoseaweed() {
   setInterval(() => {
     seaweed+=seaweedpersec;
+    seaweedtxt.textContent=`${seaweed} layer of seaweed`;
   }, 1000);
 }
 autoseaweed();
