@@ -106,11 +106,15 @@ header{
 }
 .shopcontainer{
   width: inherit;
-   height: 140px; 
+   height: 140px;
+   flex-shrink: 0;
    background-color: rgb(49, 49, 49); 
    border-radius: 15px; 
    color: white;
    transform: translateY(-115px);
+}
+#shop{
+  overflow-y: auto;
 }
 .name{
 transform: translateY(-20px);

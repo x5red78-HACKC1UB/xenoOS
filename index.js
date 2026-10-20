@@ -27,6 +27,11 @@ const abtmewindow=document.getElementById("aboutmewindow");
 const abtmeicon=document.getElementById("abtmeicon");// About Me window
 const closeabtme=document.getElementById("closeabtme");
 
+const osicon=document.getElementById("osachieve");
+const oswindow=document.getElementById("oswindow");
+const achievementlist=document.getElementById("achievementlist");
+const closeachieve=document.getElementById("closeachieve");
+
 const seaweedwindow=document.getElementById("seaweedwindow");
 const closeseaweed=document.getElementById("closeseaweed");
 const seaweedicon=document.getElementById("seaweedicon");
@@ -37,7 +42,9 @@ const upgrades=[
   {name:"Extra seaweed", cost:10, spc:1},
   {name:"Auto Seaweed", cost:25, sps:1},
   {name:"Sushi Stealer", cost:65, sps:3},
-  {name:"Seaweed farm", cost:500, spc:5}
+  {name:"Seaweed farm", cost:500, spc:5},
+  {name:"Seaweed Store", cost:1700, sps:15},
+  {name:"Enchanted Seaweed", cost:5000, sps:20, spc:15, swm:1.05},
 ]
 
 let seaweed = 0;
@@ -53,9 +60,11 @@ function autoseaweed() {
   }, 1000);
 }
 autoseaweed();
+
 seaweedbutton.addEventListener("click",()=>{
-  seaweed+=(0+extraseaweed)*seaweedmultipler;
+  seaweed+=Math.round((0+extraseaweed)*seaweedmultipler);
   seaweedtxt.textContent=`${seaweed} layers of seaweed`;
+  
 });
 upgrades.forEach((upgrade, index) => {
   const upgradecontainer = document.createElement("div");
@@ -77,6 +86,9 @@ name.classList.add("name")
 
       if (upgrade.sps) {
         seaweedpersec += upgrade.sps;
+      }
+      if (upgrade.swm){
+        seaweedmultipler+=upgrade.swm;
       }
 
       upgrade.cost = Math.floor(upgrade.cost * 1.15);
@@ -182,6 +194,9 @@ closewindow(abtmewindow);
 closeseaweed.addEventListener("click",()=>{
 closewindow(seaweedwindow);
 });
+closeachieve.addEventListener("click",()=>{
+closewindow(oswindow);
+});
 
 
 notesicon.addEventListener("click",()=>{
@@ -203,6 +218,10 @@ openwindow(abtmewindow, "block");
 seaweedicon.addEventListener("click",()=>{
 isappselected(seaweedicon);
 openwindow(seaweedwindow,"block");
+});
+osicon.addEventListener("click",()=>{
+isappselected(osicon);
+openwindow(oswindow,"block");
 });
 
 
@@ -492,6 +511,7 @@ DragElement(notes);
 DragElement(settingwindow);
 DragElement(abtmewindow);
 DragElement(seaweedwindow);
+DragElement(oswindow);
 //dragging area
 function DragElement(element){ //dragging fuction
 var initialX =0; // x value of where the window orginally was
