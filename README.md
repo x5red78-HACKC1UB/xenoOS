@@ -7,6 +7,14 @@ Settings
 About Me
 Seaweed Clicker
 
+WHAT IT IS....
+A cool os which is similar to a web but with more functionality
+
+thing I learned:
+better web design,apps, switching bg, and a WHOLE lot of javascript
+
+RUNS ON ANY SEARCH ENGINE
+
 PROJECT FOR TERRA
 (I rlly need that framework)
 
