@@ -31,6 +31,54 @@ const osicon=document.getElementById("osachieve");
 const oswindow=document.getElementById("oswindow");
 const achievementlist=document.getElementById("achievementlist");
 const closeachieve=document.getElementById("closeachieve");
+let detectapp=0;
+let detectnotes=0;
+let detectstats=0;
+let detectsetting=0;
+let detectaboutme=0;
+let detectseaweed=0;
+let detectachievements=0;
+let checkedtt=0;
+async function achievement() {
+  achievementlist.innerHTML ="";
+  achievementlist.innerHTML+="<h1> Easy</h1>"
+  achievementlist.innerHTML+="<li> Welcome!</li>"
+  if (detectnotes>=1) {
+    achievementlist.innerHTML+="<li>Notetaker</li>"
+  }
+  if (detectstats>=1) {
+    achievementlist.innerHTML+="<li> Stats!</li>"
+  }
+  if (detectsetting>=1) {
+    achievementlist.innerHTML+="<li> Setting Snob</li>"
+  }
+  if (detectaboutme>=1) {
+    achievementlist.innerHTML+="<li> ABOUT ME!!! </li>"
+  }
+  if (detectseaweed>=1) {
+    achievementlist.innerHTML+=" <li> Played Seaweed clicker </li>"
+  }
+  if (detectachievements>=1) {
+    achievementlist.innerHTML+="<li> Achiever</li>"
+  }
+  achievementlist.innerHTML+="<h1> Mid</h1>"
+  if (seaweed>=1000) {
+    achievementlist.innerHTML+="<li>Seaweed Stacker</li>"
+  }
+  if(framespersecond<=30){
+await imgtime(500);
+if (framespersecond<=30) {
+  achievementlist.innerHTML+="<li> Lagginator</li>"
+}
+  }
+  if (checkedtt>=0){
+achievementlist.innerHTML+="<li> Saw my tt page >:D</li>"
+  }
+  
+
+
+
+}
 
 const seaweedwindow=document.getElementById("seaweedwindow");
 const closeseaweed=document.getElementById("closeseaweed");
@@ -180,7 +228,7 @@ closewindow(welcome);
 });
 xnotes.addEventListener("click",()=>{
 closewindow(notes);
-notetext ='';
+noteinput.value ='';
 });
 closestats.addEventListener("click",()=>{ // X buttons!
 closewindow(statwindow);
@@ -202,26 +250,38 @@ closewindow(oswindow);
 notesicon.addEventListener("click",()=>{
   isappselected(notesicon)
 openwindow(notes);
+detectnotes+=1;
+achievement();
 });
 staticon.addEventListener("click",()=>{
 isappselected(staticon);
 openwindow(statwindow);
+detectstats+=1;
+achievement();
 });
 settingicon.addEventListener("click",()=>{
 isappselected(settingicon);
 openwindow(settingwindow);    // CLICKING ICONS
+detectsetting+=1;
+achievement();
 });
 abtmeicon.addEventListener("click",()=>{
 isappselected(abtmeicon);
 openwindow(abtmewindow, "block");
+detectaboutme+=1;
+achievement();
 });
 seaweedicon.addEventListener("click",()=>{
 isappselected(seaweedicon);
 openwindow(seaweedwindow,"block");
+detectseaweed+=1;
+achievement();
 });
 osicon.addEventListener("click",()=>{
 isappselected(osicon);
 openwindow(oswindow,"block");
+detectachievements+=1;
+achievement();
 });
 
 
@@ -229,6 +289,8 @@ openwindow(oswindow,"block");
 
 tiktok.addEventListener("click",()=>{
 window.location.href = "https://www.tiktok.com/@chromixhere";
+checkedtt++;
+achievement();
 });                                                            //Contacts
 email.addEventListener("click",()=>{
 window.location.href ="mailto:x5red78@gmail.com"
@@ -245,6 +307,7 @@ if (answer ===null||answer.trim()===""||!Number.isFinite(seconds)) {
   howmanyseconds =seconds;
 }
 });
+
 
  bg.style.background=bgimg[theme];
  day.style.marginLeft="150px"
@@ -325,7 +388,7 @@ time.style.color="rgb(23, 5, 35)"
   document.getElementById("day").style.marginLeft="570px";
     document.getElementById("time").style.marginLeft="565px";
     day.style.color= "rgb(240, 165, 255)"
-time.style.color="rgb(240, 165, 2555)"
+time.style.color="rgb(240, 165, 255)"
     break;
   
     case "megumi":
@@ -499,8 +562,7 @@ async function imgshift(){
    bg.style.background = "url('images/gojo.jpg') center/cover no-repeat";
    while(true){
     await imgtime(howmanyseconds*1000);
-  fadein();
-  await imgtime(600);
+  await fadein();
   theme = (theme + 1) % bgimg.length;
      themeswitch(bgnames[theme]);
 }
