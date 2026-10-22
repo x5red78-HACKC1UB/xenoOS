@@ -5,6 +5,24 @@ const time=document.getElementById("time");
 
 const bg=document.getElementById("background");
 const welcome=document.getElementById("welcomewindow"); // bg
+let theme = 0;
+const fpscalc=document.getElementById("fps");
+
+let fpstime = performance.now();  //fps variables
+let frames = 0; //fps variable
+function Updatefps(){
+frames++;
+var now=performance.now(); //fps calc's
+var elapsedtime=now-fpstime;
+if (elapsedtime>=1000) {
+  var framespersecond =Math.round((frames*1000)/elapsedtime);
+  fpscalc.textContent=framespersecond;
+  frames=0;
+  fpstime=now;
+};
+requestAnimationFrame(Updatefps);
+}
+Updatefps();
 
 const notes=document.getElementById("noteswindow");
 const notesicon=document.getElementById("noteicon");
@@ -27,6 +45,8 @@ const abtmewindow=document.getElementById("aboutmewindow");
 const abtmeicon=document.getElementById("abtmeicon");// About Me window
 const closeabtme=document.getElementById("closeabtme");
 
+
+
 const osicon=document.getElementById("osachieve");
 const oswindow=document.getElementById("oswindow");
 const achievementlist=document.getElementById("achievementlist");
@@ -39,6 +59,7 @@ let detectaboutme=0;
 let detectseaweed=0;
 let detectachievements=0;
 let checkedtt=0;
+
 async function achievement() {
   achievementlist.innerHTML ="";
   achievementlist.innerHTML+="<h1> Easy</h1>"
@@ -65,20 +86,62 @@ async function achievement() {
   if (seaweed>=1000) {
     achievementlist.innerHTML+="<li>Seaweed Stacker</li>"
   }
-  if(framespersecond<=30){
+  if(Number(fpscalc.textContent)<=30){
 await imgtime(500);
-if (framespersecond<=30) {
+if (Number(fpscalc.textContent)<=30) {
   achievementlist.innerHTML+="<li> Lagginator</li>"
 }
   }
-  if (checkedtt>=0){
+  if (checkedtt>=1){
 achievementlist.innerHTML+="<li> Saw my tt page >:D</li>"
   }
-  
-
-
-
+  if (day.innerHTML==="Friday") {
+    achievementlist.innerHTML+="<li>Relaxing Weekend</li>"
+  }
+ if (time.innerHTML.includes("AM")) {
+  achievementlist.innerHTML+="<li>Restless</li>"
+ }
+ if(theme>=18){
+  achievementlist.innerHTML+="<li>Visuals</li>"
+ }
+achievementlist.innerHTML+="<h1>Legendary</h1>"
+if(seaweed>=1000000){
+  achievementlist.innerHTML+="<li>Seaweed lover</li>"
 }
+achievementlist.innerHTML+="<h1>Mythical</h1>"
+achievementlist.innerHTML+="<h1>Secret(???)</h1>"
+if(seaweed===777){
+  achievementlist.innerHTML+="<li>Lucky Seaweed</li>"
+}
+if(seaweed>=10000000){
+  achievementlist.innerHTML+="<li>Seaweed KING</li>"
+}
+if (konamiUnlocked=true) {
+  achievementlist.innerHTML+="<li>Konami</li>"
+}
+}
+
+
+let konami=[
+"ArrowUp","ArrowUp","ArrowDown","ArrowDown","ArrowLeft", "ArrowRight",
+  "ArrowLeft", "ArrowRight","b","a"
+];
+let inputsofkonami=0;
+let konamiUnlocked=false;
+
+document.addEventListener("keydown",(e)=>{
+  if(e.key.toLowerCase() === konami[inputsofkonami].toLowerCase()){
+    inputsofkonami++;
+  }else{
+    inputsofkonami=0;
+  }
+  if(inputsofkonami===konami.length){
+    konamiUnlocked=true;
+    inputsofkonami=0
+    window.alert("Unlocked.....")
+    achievement();
+  } 
+});
 
 const seaweedwindow=document.getElementById("seaweedwindow");
 const closeseaweed=document.getElementById("closeseaweed");
@@ -153,13 +216,9 @@ upgradecontainer.appendChild(name);
 
 const tiktok=document.getElementById("TT");
 const email=document.getElementById("email");
-
-const fpscalc=document.getElementById("fps");
 let howmanyseconds=60;
 
-let fpstime = performance.now();  //fps variables
-let frames = 0; //fps variable
-let theme = 0;
+
 let selectedapp=undefined;
 
 savebtn.addEventListener("click",()=>{
@@ -228,7 +287,7 @@ closewindow(welcome);
 });
 xnotes.addEventListener("click",()=>{
 closewindow(notes);
-noteinput.value ='';
+notetext ='';
 });
 closestats.addEventListener("click",()=>{ // X buttons!
 closewindow(statwindow);
@@ -288,9 +347,10 @@ achievement();
 
 
 tiktok.addEventListener("click",()=>{
-window.location.href = "https://www.tiktok.com/@chromixhere";
-checkedtt++;
+window.open('https://www.tiktok.com/@chromixhere', '_blank').focus();
+checkedtt+=1;
 achievement();
+console.log(checkedtt);
 });                                                            //Contacts
 email.addEventListener("click",()=>{
 window.location.href ="mailto:x5red78@gmail.com"
@@ -615,19 +675,7 @@ function StopDragging() {
   document.onmousemove = null;
 }
 }
-function Updatefps(){
-frames++;
-const now=performance.now(); //fps calc's
-const elapsedtime=now-fpstime;
-if (elapsedtime>=1000) {
-  const framespersecond =Math.round((frames*1000)/elapsedtime);
-  fpscalc.textContent=framespersecond;
-  frames=0;
-  fpstime=now;
-};
-requestAnimationFrame(Updatefps);
-}
-Updatefps();
+
 if (storednotes) {
     noteinput.value =storednotes;
   }
