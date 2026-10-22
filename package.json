@@ -1,0 +1,27 @@
+{
+  "name": "xenoos",
+  "version": "1.0.0",
+  "description": "This is my first ever OS and My new Website! It's a massive improvement from the old one. Also it has apps! Apps so far: Notes My stats Settings About Me Seaweed Clicker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/x5red78-HACKC1UB/xenoOS.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/x5red78-HACKC1UB/xenoOS/issues"
+  },
+  "homepage": "https://github.com/x5red78-HACKC1UB/xenoOS#readme",
+  "dependencies": {
+    "express": "^5.3.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6"
+  }
+}
