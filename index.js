@@ -692,6 +692,8 @@ async function XenoSearch(){
         };
   
     const data = await response.json();
+    const results = document.getElementById("searchresults");
+    results.textContent=`${data.message} You typed ${data.query}` //TEST message TEMPORARY
     console.log(data);
     } catch (error) {
         console.error("search failed:",error)
