@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/x5red78-HACKC1UB/xenoOS#readme",
   "dependencies": {
+    "dotenv": "^18.0.9",
     "express": "^5.3.0"
   },
   "devDependencies": {

@@ -694,7 +694,28 @@ async function XenoSearch(){
     const data = await response.json();
     const results = document.getElementById("searchresults");
     results.textContent=`${data.message} You typed ${data.query}` //TEST message TEMPORARY
-    console.log(data);
+    results.innerHTML ="";
+    data.results.forEach(result =>{
+      const searchdiv = document.createElement("div");
+      searchdiv.classList.add("search-result");
+
+      const title = document.createElement("a");
+      title.textContent = result.title;
+      title.href =result.url;
+      title.target ="_blank";
+      title.rel= "noopener noreferrer"
+      
+      const searchdetails =document.createElement("p");
+      searchdetails.textContent = result.content;
+
+      const link = document.createElement("p");
+      link.textContent = result.url;
+      searchdiv.appendChild(title);
+      searchdiv.appendChild(link);
+      searchdiv.appendChild(searchdetails);
+
+      results.appendChild(searchdiv);
+    })
     } catch (error) {
         console.error("search failed:",error)
     }
