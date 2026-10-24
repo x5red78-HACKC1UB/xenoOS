@@ -679,3 +679,25 @@ function StopDragging() {
 if (storednotes) {
     noteinput.value =storednotes;
   }
+  const searchinput=document.getElementById("searchinput");
+const searchbutton=document.getElementById("searchbutton");
+async function XenoSearch(){
+    const search = searchinput.value.trim();
+    if(!search) return;
+    try {
+        const response = await fetch(`/api/search?q=${encodeURIComponent(search)}`
+    ); // sends a request with the search txt safe to put in a url
+        if (!response.ok) { //what happen if the responce isn't  sucessful
+            throw new Error(`HTTP eror: ${response.status}`)
+        };
+  
+    const data = await response.json();
+    console.log(data);
+    } catch (error) {
+        console.error("search failed:",error)
+    }
+}
+
+ searchbutton.addEventListener("click", ()=>{
+XenoSearch();
+  });
