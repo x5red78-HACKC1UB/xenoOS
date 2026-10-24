@@ -119,6 +119,9 @@ if(seaweed>=10000000){
 if (konamiUnlocked=true) {
   achievementlist.innerHTML+="<li>Konami</li>"
 }
+ if (data.query==="seaweed" || "SEAWEED") {
+      achievementlist.innerHTML+="<li>True Seaweed Fan</li>"
+    }
 }
 
 
@@ -694,6 +697,7 @@ async function XenoSearch(){
     const data = await response.json();
     const results = document.getElementById("searchresults");
     results.textContent=`${data.message} You typed ${data.query}` //TEST message TEMPORARY
+  
     results.innerHTML ="";
     data.results.forEach(result =>{
       const searchdiv = document.createElement("div");
