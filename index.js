@@ -5,6 +5,9 @@ const time=document.getElementById("time");
 
 const bg=document.getElementById("background");
 const welcome=document.getElementById("welcomewindow"); // bg
+const tab = document.getElementById("xenotab");
+tab.style.display ="block";
+const tabwindow = document.getElementById("tabwindow")
 let theme = 0;
 const fpscalc=document.getElementById("fps");
 
@@ -44,6 +47,8 @@ const closesettings=document.getElementById("closesettings");
 const abtmewindow=document.getElementById("aboutmewindow");
 const abtmeicon=document.getElementById("abtmeicon");// About Me window
 const closeabtme=document.getElementById("closeabtme");
+const closetab=document.getElementById("closetab");
+
 
 
 
@@ -306,6 +311,10 @@ closewindow(seaweedwindow);
 });
 closeachieve.addEventListener("click",()=>{
 closewindow(oswindow);
+});
+closetab.addEventListener("click",()=>{
+closewindow(tab);
+
 });
 
 
@@ -637,6 +646,7 @@ DragElement(settingwindow);
 DragElement(abtmewindow);
 DragElement(seaweedwindow);
 DragElement(oswindow);
+DragElement(tabwindow);
 //dragging area
 function DragElement(element){ //dragging fuction
 var initialX =0; // x value of where the window orginally was
@@ -656,6 +666,9 @@ function StartDragging(e) {
     return; // Don't prevent typing
   }
   e.preventDefault();
+   if (element === tabwindow) {
+  tab.style.pointerEvents = "none";
+}
 
   initialX=e.clientX;
   initialY =e.clientY;
@@ -706,7 +719,7 @@ async function XenoSearch(){
       const title = document.createElement("a");
       title.textContent = result.title;
       title.href =result.url;
-      title.target ="_blank";
+      title.target ="xenotab";
       title.rel= "noopener noreferrer"
       
       const searchdetails =document.createElement("p");
@@ -717,8 +730,9 @@ async function XenoSearch(){
       searchdiv.appendChild(title);
       searchdiv.appendChild(link);
       searchdiv.appendChild(searchdetails);
-
+      
       results.appendChild(searchdiv);
+      closetab.style.display="block";
     })
     } catch (error) {
         console.error("search failed:",error)
