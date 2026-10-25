@@ -1,7 +1,7 @@
 const imgtime=(ms)=> new Promise((resolve) => setTimeout(resolve,ms));
 
 const day=document.getElementById("day"); //time id's
-const time=document.getElementById("time"); //hey
+const time=document.getElementById("time"); 
 
 const bg=document.getElementById("background");
 const welcome=document.getElementById("welcomewindow"); // bg
