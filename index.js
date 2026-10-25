@@ -59,6 +59,7 @@ let detectaboutme=0;
 let detectseaweed=0;
 let detectachievements=0;
 let checkedtt=0;
+let konamiUnlocked=false;
 
 async function achievement() {
   achievementlist.innerHTML ="";
@@ -116,7 +117,7 @@ if(seaweed===777){
 if(seaweed>=10000000){
   achievementlist.innerHTML+="<li>Seaweed KING</li>"
 }
-if (konamiUnlocked=true) {
+if (konamiUnlocked===true) {
   achievementlist.innerHTML+="<li>Konami</li>"
 }
  if (data.query==="seaweed" || "SEAWEED") {
@@ -130,7 +131,7 @@ let konami=[
   "ArrowLeft", "ArrowRight","b","a"
 ];
 let inputsofkonami=0;
-let konamiUnlocked=false;
+
 
 document.addEventListener("keydown",(e)=>{
   if(e.key.toLowerCase() === konami[inputsofkonami].toLowerCase()){
