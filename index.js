@@ -314,7 +314,7 @@ closeachieve.addEventListener("click",()=>{
 closewindow(oswindow);
 });
 closetab.addEventListener("click",()=>{
-closewindow(tab);
+closewindow(tabwindow);
 
 });
 
@@ -667,9 +667,6 @@ function StartDragging(e) {
     return; // Don't prevent typing
   }
   e.preventDefault();
-   if (element === tabwindow) {
-  tab.style.pointerEvents = "none";
-}
 
   initialX=e.clientX;
   initialY =e.clientY;
@@ -721,7 +718,9 @@ async function XenoSearch(){
       title.textContent = result.title;
       title.href =result.url;
       title.target ="xenotab";
-      title.rel= "noopener noreferrer"
+     title.addEventListener("click",()=>{
+tabwindow.style.display="block";
+     });
       
       const searchdetails =document.createElement("p");
       searchdetails.textContent = result.content;
@@ -734,6 +733,7 @@ async function XenoSearch(){
       
       results.appendChild(searchdiv);
       closetab.style.display="block";
+      tabwindow.style.display="block";
    })
     } catch (error) {
         console.error("search failed:",error)
