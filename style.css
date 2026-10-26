@@ -136,3 +136,11 @@ overflow-x: hidden;
 .searchbar:focus{
 box-shadow: 0 0 20px #19152F;
 }
+.closebtn{
+  background-color:red; 
+  width:30px; 
+  height:30px; 
+  position: absolute; 
+  top: 0px; 
+  right: 0px;
+}

@@ -123,9 +123,13 @@
 <input id="searchinput" placeholder="Explore the vast space....." style="height: 70px; border: none; border-radius: 15px; width: 500px; font-family: Comic Sans MS; transform: translate(530px,250px); display: block; position: absolute; background-color: #090B1A; color: #3C78FF;" class="searchbar">
 <button id="searchbutton" style="height: 70px; border: none; border-radius: 15px; font-family: Comic Sans MS; transform: translate(985px,250px); display: block; position: absolute;">Search</button>
 <div id="searchresults" style="font-family: Comic Sans MS; position: absolute; top:40%; bottom: 60%; left:45%;"></div>
-<div id="tabwindow" style="display:none; position:absolute; top:100px; left:100px; width:800px; height: 650px; background-color: #090B1A; border: 2px solid black; border-radius: 15px; z-index: 100;">
+<div id="tabwindow" style="display:none; position:absolute; top:100px; left:100px; width:800px; height: 650px; background-color: #090B1A; border: 2px solid black; border-radius: 15px; z-index: 100; font-family: Comic Sans MS;">
   <div id="tabwindowheader" style="height: 40px; background-color: #151932; cursor: move; border-radius: 10px;"></div>
-  <span></span>
+  <span> XenoOS</span>
+  <button id="closetab" class="closebtn"><strong>X</strong></button>
+  <div style="background-color: #151932; padding: 3px;">
+    <iframe src="about:black" name="xenotab" id="xenotab" stye="width:80%; height:420px; border:none; display:blick; border-radius; 12px"></iframe>
+  </div>
 
 </div>
   <header>
@@ -162,5 +166,6 @@
   </script>
 
   <script src="index.js" defer></script>
+  <script src="server.js"></script>
 </body>
 </html>

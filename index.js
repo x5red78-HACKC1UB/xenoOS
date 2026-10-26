@@ -734,7 +734,7 @@ async function XenoSearch(){
       
       results.appendChild(searchdiv);
       closetab.style.display="block";
-    })
+   })
     } catch (error) {
         console.error("search failed:",error)
     }
