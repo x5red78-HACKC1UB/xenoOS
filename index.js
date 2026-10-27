@@ -50,7 +50,11 @@ const closeabtme=document.getElementById("closeabtme");
 const closetab=document.getElementById("closetab");
 
 
-
+const musicicon = document.getElementById("musicicon");
+const musicwindow=document.getElementById("musicwindow");
+const fileselect = document.getElementById("fileselect");
+const audioplayer=document.getElementById("audioplayer");
+const closemusic=document.getElementById("closemusic")
 
 const osicon=document.getElementById("osachieve");
 const oswindow=document.getElementById("oswindow");
@@ -63,8 +67,10 @@ let detectsetting=0;
 let detectaboutme=0;
 let detectseaweed=0;
 let detectachievements=0;
+let detectmusic=0;
 let checkedtt=0;
 let konamiUnlocked=false;
+let currentsearch=""; 
 
 async function achievement() {
   achievementlist.innerHTML ="";
@@ -87,6 +93,9 @@ async function achievement() {
   }
   if (detectachievements>=1) {
     achievementlist.innerHTML+="<li> Achiever</li>"
+  }
+  if (detectmusic>=1) {
+    achievementlist.innerHTML+="<li>music enjoyer XD</li>"
   }
   achievementlist.innerHTML+="<h1> Mid</h1>"
   if (seaweed>=1000) {
@@ -125,7 +134,7 @@ if(seaweed>=10000000){
 if (konamiUnlocked===true) {
   achievementlist.innerHTML+="<li>Konami</li>"
 }
- if (data.query==="seaweed" || "SEAWEED") {
+ if (currentsearch.toLowerCase.trim()==="seaweed" || "SEAWEED") {
       achievementlist.innerHTML+="<li>True Seaweed Fan</li>"
     }
 }
@@ -165,25 +174,28 @@ const upgrades=[
   {name:"Seaweed farm", cost:500, spc:5},
   {name:"Seaweed Store", cost:1700, sps:15},
   {name:"Enchanted Seaweed", cost:5000, sps:20, spc:15, swm:1.05},
+  {name:"Golden Seaweed", cost:75000,qsd:0.02,sps:50}
 ]
 
 let seaweed = 0;
 let seaweedmultipler=1;
 let extraseaweed=1;
 let seaweedpersec=0
+let quickseaweed=1;
 let cost1 = 10;
 let cost2=25;
 function autoseaweed() {
   setInterval(() => {
     seaweed+=seaweedpersec;
     seaweedtxt.textContent=`${seaweed} layers of seaweed`;
-  }, 1000);
+  }, 1000/quickseaweed);
 }
 autoseaweed();
 
 seaweedbutton.addEventListener("click",()=>{
   seaweed+=Math.round((0+extraseaweed)*seaweedmultipler);
   seaweedtxt.textContent=`${seaweed} layers of seaweed`;
+  achievement();
   
 });
 upgrades.forEach((upgrade, index) => {
@@ -209,6 +221,9 @@ name.classList.add("name")
       }
       if (upgrade.swm){
         seaweedmultipler+=upgrade.swm;
+      }
+      if(upgrade.qsd){
+        quickseaweed+=upgrade.swm;
       }
 
       upgrade.cost = Math.floor(upgrade.cost * 1.15);
@@ -322,6 +337,9 @@ if (answer.toLowerCase.trim()==="no") {
   document.getElementById("searchresults").innerHTML = "";
 }
 });
+closemusic.addEventListener("click",()=>{
+closewindow(musicwindow);
+});
 
 
 notesicon.addEventListener("click",()=>{
@@ -358,6 +376,12 @@ osicon.addEventListener("click",()=>{
 isappselected(osicon);
 openwindow(oswindow,"block");
 detectachievements+=1;
+achievement();
+});
+musicicon.addEventListener("click",()=>{
+isappselected(musicicon);
+openwindow(musicwindow,"block");
+detectmusic+=1;
 achievement();
 });
 
@@ -702,6 +726,7 @@ if (storednotes) {
 const searchbutton=document.getElementById("searchbutton");
 async function XenoSearch(){
     const search = searchinput.value.trim();
+    currentsearch=search;
     if(!search) return;
     try {
         const response = await fetch(`/api/search?q=${encodeURIComponent(search)}`

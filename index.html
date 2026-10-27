@@ -39,6 +39,10 @@
 
   <img src="osimg/os.jpeg" style="width:50px; height:50px; border-radius: 220px; background-color: none; transform:translateY(-250px)" id="osachieve">
 <p style="font-family: Comic Sans MS; font-size: 20px; transform: translateY(-280px);">OS Achievements</p>
+
+<img src="osimg/music.jpeg" style="width: 50px; height:50px; border-radius: 220px; background-color: none; transform: translateY(-300px);" id="musicicon">
+<p style="font-family: Comic Sans MS; font-size:20px; transform: translateY(-330px);">Music Player</p>
+
 </div>
 
 
@@ -118,6 +122,13 @@
     <div id="oswindow" style="border: none; border-radius: 20px; width:400px; height:200px; overflow-y: scroll; background-color: white; color:black; font-family: Comic Sans MS; display:none; transform: translateX(200px); position: absolute;">
       <button id="closeachieve" style="background-color:red; width:30px; height:30px; position: absolute; top: 0px; right: 0px;"><strong>X</strong></button>
       <ul id="achievementlist"></ul>
+    </div>
+
+    <div id="musicwindow" style="width: 400px; height: 200px; position: absolute; bottom: 0px; right:0px; background-color: bisque; padding:10px; border-radius: 12px; display: none;">
+      <button id="closemusic" style="border: 3px rgb(241, 68, 68) solid; border-radius: 5px; position: absolute; top:0px; right:0px;"><strong>X</strong></button>
+      <button id="fileselect" style="font-family: Comfortaa; padding: 8px 12px;">Upload a Mp3 or audio file!</button>
+      <input type="input" type="file" id="mp3_input" accept="audio/mp3, audio/mpeg audio/wav">
+      <audio id="audioplayer" controls></audio>
     </div>
 
 <input id="searchinput" placeholder="Explore the vast space....." style="height: 70px; border: none; border-radius: 15px; width: 500px; font-family: Comic Sans MS; transform: translate(530px,250px); display: block; position: absolute; background-color: #090B1A; color: #3C78FF;" class="searchbar">
