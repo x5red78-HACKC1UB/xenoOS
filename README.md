@@ -15,7 +15,7 @@ better web design,apps, switching bg, and a WHOLE lot of javascript
 
 RUNS ON ANY SEARCH ENGINE
 
-PROJECT FOR TERRA
+PROJECT FOR TER- Phantom now lol
 (I rlly need that framework)
 
 I already have a lot of big features planned for this
@@ -24,6 +24,11 @@ Small fixes needed:
 CSS loading/pre-loading
 Z -index positioning errors
 Non-fullscreen support(to make the window feel less cluttered)
+
+TO DO:
+finish music player
+find link outside of localhost that the search bar works
+more achievements
 
 List of features to be added:
 Minigame
