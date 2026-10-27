@@ -10,7 +10,6 @@ body{
     display: flex;
     flex-direction: column;
 
-    overflow: hidden;
     isolation: isolate;
     background-color: rgb(66, 63, 82);
   }
@@ -122,13 +121,19 @@ font-size: 24px;
 }
 .search-result{
 font-family: Comic Sans MS;
-transform: translateX(-300px);
 background-color: #0f1a30;
 color: #3C78FF;
 border-radius: 20px;
-max-height: 400px;
+padding: 11px;
+height: fit-content;
+}
+#searchresults{
+  width: 100%;
+  box-sizing: border-box;
+  max-height: 400px;
 overflow-y: auto;
 overflow-x: hidden;
+transform: translateX(300px);
 }
 .searchbar{
   transition: transform 0.2ms ease;

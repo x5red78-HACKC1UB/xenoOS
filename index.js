@@ -6,7 +6,7 @@ const time=document.getElementById("time");
 const bg=document.getElementById("background");
 const welcome=document.getElementById("welcomewindow"); // bg
 const tab = document.getElementById("xenotab");
-tab.style.display ="block";
+
 const tabwindow = document.getElementById("tabwindow")
 let theme = 0;
 const fpscalc=document.getElementById("fps");
@@ -314,8 +314,13 @@ closeachieve.addEventListener("click",()=>{
 closewindow(oswindow);
 });
 closetab.addEventListener("click",()=>{
-closewindow(tabwindow);
-
+  closewindow(tabwindow);
+let answer=window.prompt("Would you like to clear the search results too? XD");
+if (answer.toLowerCase.trim()==="no") {
+  return;
+} else {
+  document.getElementById("searchresults").innerHTML = "";
+}
 });
 
 
@@ -720,6 +725,7 @@ async function XenoSearch(){
       title.target ="xenotab";
      title.addEventListener("click",()=>{
 tabwindow.style.display="block";
+closestats.style.display="block"
      });
       
       const searchdetails =document.createElement("p");
@@ -732,8 +738,6 @@ tabwindow.style.display="block";
       searchdiv.appendChild(searchdetails);
       
       results.appendChild(searchdiv);
-      closetab.style.display="block";
-      tabwindow.style.display="block";
    })
     } catch (error) {
         console.error("search failed:",error)
@@ -741,5 +745,6 @@ tabwindow.style.display="block";
 }
 
  searchbutton.addEventListener("click", ()=>{
+  closestats.style.display="block"
 XenoSearch();
   });
