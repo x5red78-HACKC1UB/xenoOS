@@ -54,7 +54,20 @@ const musicicon = document.getElementById("musicicon");
 const musicwindow=document.getElementById("musicwindow");
 const fileselect = document.getElementById("fileselect");
 const audioplayer=document.getElementById("audioplayer");
-const closemusic=document.getElementById("closemusic")
+const closemusic=document.getElementById("closemusic");
+
+fileselect.addEventListener("change",function(event){
+const file = event.target.files[0];
+
+if (file){
+  URL.revokeObjectURL(audioplayer.src)
+  const fileURL=URL.createObjectURL(file);
+
+  audioplayer.src=fileURL;
+  audioplayer.style.display="block"
+  audioplayer.play();
+}
+});
 
 const osicon=document.getElementById("osachieve");
 const oswindow=document.getElementById("oswindow");
