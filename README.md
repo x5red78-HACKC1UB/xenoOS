@@ -29,6 +29,9 @@ TO DO:
 finish music player
 find link outside of localhost that the search bar works
 more achievements
+ Things I needed a tutorial for:
+ search bar :P
+ js for music player
 
 List of features to be added:
 Minigame
