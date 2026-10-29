@@ -84,6 +84,13 @@ let detectmusic=0;
 let checkedtt=0;
 let konamiUnlocked=false;
 let currentsearch=""; 
+let seaweed = 0;
+let seaweedmultipler=1;
+let extraseaweed=1;
+let seaweedpersec=0
+let quickseaweed=1;
+let cost1 = 10;
+let cost2=25;
 
 async function achievement() {
   achievementlist.innerHTML ="";
@@ -137,9 +144,17 @@ if(seaweed>=1000000){
   achievementlist.innerHTML+="<li>Seaweed lover</li>"
 }
 achievementlist.innerHTML+="<h1>Mythical</h1>"
-achievementlist.innerHTML+="<h1>Secret(???)</h1>"
 if(seaweed===777){
   achievementlist.innerHTML+="<li>Lucky Seaweed</li>"
+}
+achievementlist.innerHTML+="<h1>Secret(???)</h1>"
+if(seaweed===7777){
+  achievementlist.innerHTML+="<li>seaweed</li>"
+window.alert("you found this! cool idk if you meant 2 to this but here's a buff :D")
+seaweed=seaweed*5;
+seaweedmultipler+=0.2;
+extraseaweed+=25;
+seaweedpersec+=15;
 }
 if(seaweed>=10000000){
   achievementlist.innerHTML+="<li>Seaweed KING</li>"
@@ -187,16 +202,12 @@ const upgrades=[
   {name:"Seaweed farm", cost:500, spc:5},
   {name:"Seaweed Store", cost:1700, sps:15},
   {name:"Enchanted Seaweed", cost:5000, sps:20, spc:15, swm:1.05},
-  {name:"Golden Seaweed", cost:75000,qsd:0.02,sps:50}
+  {name:"Golden Seaweed", cost:75000,qsd:0.02,sps:50},
+  {name:"Silly :3(one-time)", cost:1000000, qsd:quickseaweed/2, swm:2.5, otu:1},
+
 ]
 
-let seaweed = 0;
-let seaweedmultipler=1;
-let extraseaweed=1;
-let seaweedpersec=0
-let quickseaweed=1;
-let cost1 = 10;
-let cost2=25;
+
 function autoseaweed() {
   setInterval(() => {
     seaweed+=seaweedpersec;
@@ -235,14 +246,19 @@ name.classList.add("name")
       if (upgrade.swm){
         seaweedmultipler+=upgrade.swm;
       }
-      if(upgrade.qsd){
-        quickseaweed+=upgrade.swm;
+      if(upgrade.qsd){ // quick seaweed
+        quickseaweed+=upgrade.qsd;
       }
 
       upgrade.cost = Math.floor(upgrade.cost * 1.15);
+       if(upgrade.otu){ //One-time upgrade
+       upgrade.cost = Math.floor(upgrade.cost * 99999999999999999999999999999999999999999999);
+  button.textContent = `Bought!`;
+      }else{
 
       button.textContent = `Buy | ${upgrade.cost} seaweed`;
       seaweedtxt.textContent = `${seaweed} layers of seaweed`;
+    }
     }
   });
 upgradecontainer.appendChild(name);
@@ -690,6 +706,7 @@ DragElement(abtmewindow);
 DragElement(seaweedwindow);
 DragElement(oswindow);
 DragElement(tabwindow);
+DragElement(musicwindow);
 //dragging area
 function DragElement(element){ //dragging fuction
 var initialX =0; // x value of where the window orginally was
