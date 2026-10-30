@@ -45,6 +45,9 @@ Searching up stuff
 
 Update 1.0
 The whole OS!(bugs/progression needed)
+
+Update1.1
+SEARCH BAR FIXED/different link XD
 <img width="1364" height="767" alt="Screenshot 2026-10-19 6 22 50 PM" src="https://github.com/user-attachments/assets/39fdba8c-b324-43d4-9595-55689622cbaf"/>
 Updates soon
 
