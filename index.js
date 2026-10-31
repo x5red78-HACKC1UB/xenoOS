@@ -316,10 +316,11 @@ closewindow(oswindow);
 closetab.addEventListener("click",()=>{
   closewindow(tabwindow);
 let answer=window.prompt("Would you like to clear the search results too? XD");
-if (answer.toLowerCase.trim()==="no") {
+if (answer.toLowerCase().trim()==="no") {
   return;
 } else {
   document.getElementById("searchresults").innerHTML = "";
+  document.getElementById("searchresults").style.display ="none"
 }
 });
 
@@ -712,7 +713,8 @@ async function XenoSearch(){
   
     const data = await response.json();
     const results = document.getElementById("searchresults");
-    results.textContent=`${data.message} You typed ${data.query}` //TEST message TEMPORARY
+    results.style.display = "block";
+    console.log(data.query)
   
     results.innerHTML ="";
     data.results.forEach(result =>{
