@@ -149,3 +149,9 @@ box-shadow: 0 0 20px #19152F;
   top: 0px; 
   right: 0px;
 }
+#icons{
+  transition: 0.2s ease;
+}
+#icons:hover{
+  transform: scale(1.05);
+}
