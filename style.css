@@ -14,6 +14,30 @@ body{
     background-color: rgb(66, 63, 82);
     overflow: hidden;
   }
+  body::before{/*pre loading fix by forcing the browser to load the images*/
+content:"";
+display:none;
+background-image: 
+ url('images/gojo.jpg') center/cover no-repeat,
+  url('images/choso.jpg') center/cover no-repeat,
+  url('images/$KASHIMO$.webp') center/cover no-repeat, 
+  url('images/120.jpeg') center/cover no-repeat,
+  url('images/hakari.png') center/cover no-repeat,
+  url('images/hakari2.png') center/cover no-repeat,
+  url('images/higuruma.png') center/cover no-repeat,
+  url('images/JUDAS.png') center/cover no-repeat,
+  url('images/mahito.png') center/cover no-repeat,
+  url('images/megumi.png') center/cover no-repeat,
+  url('images/meguna.png') center/cover no-repeat,
+  url('images/nanamin.png') center/cover no-repeat,
+  url('images/naoya.png') center/cover no-repeat,
+  url('images/ryu.png') center/cover no-repeat,
+  url('images/sendai.png') center/cover no-repeat,
+  url('images/TAKABA.png') center/cover no-repeat,
+  url('images/todo.png') center/cover no-repeat,
+  url('images/toji.png') center/cover no-repeat,
+  url('images/yuki.png') center/cover no-repeat;
+  }
 #background {
   position: fixed;
   inset: 0;

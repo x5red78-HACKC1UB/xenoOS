@@ -202,7 +202,7 @@ const upgrades=[
   {name:"Seaweed Store", cost:1700, sps:15},
   {name:"Enchanted Seaweed", cost:5000, sps:20, spc:15, swm:1.05},
   {name:"Golden Seaweed", cost:75000,qsd:0.02,sps:50},
-  {name:"Silly :3(one-time)", cost:1000000, qsd:quickseaweed/2, swm:2.5, otu:1},
+  {name:"Silly :3(one-time)", cost:1000000, qsd:quickseaweed/3, swm:2.5, sps:100, spc:50, otu:1},
 
 ]
 
@@ -694,6 +694,7 @@ async function imgshift(){
    while(true){
     await imgtime(howmanyseconds*1000);
   await fadein();
+  
   theme = (theme + 1) % bgimg.length;
      themeswitch(bgnames[theme]);
 }
