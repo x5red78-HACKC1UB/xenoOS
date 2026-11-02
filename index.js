@@ -774,7 +774,7 @@ if (storednotes) {
   }
   const searchinput=document.getElementById("searchinput");
 const searchbutton=document.getElementById("searchbutton");
-async function XenoSearch(){
+async function XenoSearch(){ // 777!!!!
     const search = searchinput.value.trim();
     currentsearch=search;
     if(!search) return;
