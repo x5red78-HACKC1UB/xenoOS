@@ -162,9 +162,8 @@ if(seaweed>=10000000){
 if (konamiUnlocked===true) {
   achievementlist.innerHTML+="<li>Konami</li>"
 }
- if (currentsearch.toLowerCase.trim()==="seaweed" || "SEAWEED") {
-      achievementlist.innerHTML+="<li>True Seaweed Fan</li>"
-    }
+
+
 }
 
 

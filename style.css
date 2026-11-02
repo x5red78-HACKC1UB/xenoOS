@@ -12,6 +12,7 @@ body{
 
     isolation: isolate;
     background-color: rgb(66, 63, 82);
+    overflow: hidden;
   }
 #background {
   position: fixed;
