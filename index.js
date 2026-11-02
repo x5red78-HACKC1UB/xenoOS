@@ -741,8 +741,27 @@ function DragElement(e) {
     initialX = e.clientX;
     initialY = e.clientY;
 
-        element.style.top = (element.offsetTop - currentY) + "px";
-    element.style.left = (element.offsetLeft - currentX) + "px";
+    let topPos = element.offsetTop - currentY;
+    let leftPos = element.offsetLeft - currentX;
+
+    let maxtopPos = window.innerHeight - element.offsetHeight;
+    let maxleftPos= window.innerWidth - element.offsetWidth;
+
+    if (topPos<0) {
+      topPos=0
+    }
+    if (topPos>maxtopPos) {
+      topPos=maxtopPos;
+    }
+    if (leftPos<0) {
+      leftPos=0;
+    }
+    if (leftPos>maxleftPos) {
+      leftPos=maxleftPos;
+    }
+
+        element.style.top = topPos + "px";
+    element.style.left = topPos + "px";
 }
 function StopDragging() {
   document.onmouseup = null;
