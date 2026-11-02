@@ -761,7 +761,7 @@ function DragElement(e) {
     }
 
         element.style.top = topPos + "px";
-    element.style.left = topPos + "px";
+    element.style.left = leftPos + "px";
 }
 function StopDragging() {
   document.onmouseup = null;
