@@ -203,6 +203,7 @@ const upgrades=[
   {name:"Enchanted Seaweed", cost:5000, sps:20, spc:15, swm:1.05},
   {name:"Golden Seaweed", cost:75000,qsd:0.02,sps:50},
   {name:"Silly :3(one-time)", cost:1000000, qsd:quickseaweed/3, swm:2.5, sps:100, spc:50, otu:1},
+  {name:"s e a w e e d", cost:10000000, qsd:quickseaweed/10, otu:1, sps:500}
 
 ]
 
