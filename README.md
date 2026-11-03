@@ -21,9 +21,10 @@ PROJECT FOR TER- Phantom now lol
 I already have a lot of big features planned for this
 
 Small fixes needed:
-CSS loading/pre-loading
-Z -index positioning errors
+stop cheating
+Z -index balancing
 Non-fullscreen support(to make the window feel less cluttered)
+
 
 
 TO DO:
@@ -34,7 +35,7 @@ small fixes
 brainstorming more thing 2 do
  Things I needed a tutorial for:
  search bar :P
- js for music player
+ and for music player
 
 List of features to be added:
 Minigame
@@ -42,7 +43,7 @@ Night mode??????(yeah idk either)
 Faq
 More OS settings
 404 page
-Searching up stuff
+
 
 
 Update 1.0
