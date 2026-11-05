@@ -734,9 +734,9 @@ function StartDragging(e) {
   initialY =e.clientY;
 
   document.onmouseup =StopDragging;// when mouse is released stop dragging
-  document.onmousemove = DragElement;// allow the window to move with the mouse
+  document.onmousemove = mousemove;// allow the window to move with the mouse
 }
-function DragElement(e) {
+function mousemove(e) {
   e.preventDefault();
  currentX = initialX - e.clientX;
     currentY = initialY - e.clientY;
@@ -746,8 +746,8 @@ function DragElement(e) {
     let topPos = element.offsetTop - currentY;
     let leftPos = element.offsetLeft - currentX;
 
-    let maxtopPos = window.innerHeight - element.offsetHeight;
-    let maxleftPos= window.innerWidth - element.offsetWidth;
+    let maxtopPos = Math.max(0,window.innerHeight - element.offsetHeight);
+    let maxleftPos= Math.max(0,window.innerWidth - element.offsetWidth);
 
     if (topPos<0) {
       topPos=0
@@ -761,7 +761,10 @@ function DragElement(e) {
     if (leftPos>maxleftPos) {
       leftPos=maxleftPos;
     }
-
+    let extraheight=element.offsetHeight-window.innerHeight;
+    if(extraheight>0){
+    element.style.width=(element.offsetWidth +extraheight) + "px";
+    }
         element.style.top = topPos + "px";
     element.style.left = leftPos + "px";
 }
