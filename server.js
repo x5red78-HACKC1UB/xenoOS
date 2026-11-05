@@ -65,6 +65,9 @@ error:"Search failed :("
 app.listen(3000,()=>{
 console.log("XenoOS search running on  http://localhost:3000") // message when server's live
 });
+app.use((req,res)=>{
+    res.status(404).sendFile(path.join(__dirname,'404.html'));
+});
 
 //process: someone types seaweed
 // app get handles the request
